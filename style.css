@@ -1,0 +1,94 @@
+/*Standard rules*/
+.t-text{
+    color: white;
+
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: bold;
+}
+
+.p-text{
+    color: white;
+}
+
+/* Front page */
+/* CSS to ensure video fits within the div */
+.f-page {
+    width: 100%; /* Ensure the div takes up the full width */
+    height: 80vh; /* Set the height to 80% of the viewport height */
+    overflow: hidden; /* Hide any content that overflows the div */
+    position: relative; /* Set position relative to properly handle absolutely positioned video */
+  }
+  
+  .headervideo {
+    width: 100%; /* Make the video fill the width of its container */
+    height: auto; /* Maintain the aspect ratio */
+    position: absolute; /* Position video absolutely within its container */
+    top: 30%; /* Push the video up by 50% */
+    left: 0; /* Align video to the left */
+    transform: translateY(-50%); /* Adjust position to center vertically */
+  }
+
+/* Carousel pages */
+.c-item{
+    height: 60vh;          /*Hoogte van de pagina*/
+    position: relative;     /*Andere child elementen kan je absoluut plaatsen t.o.v. dit item*/
+}
+
+/* Carousel item 1 */
+.c-img1{
+    height: 100%;           /*Volledige hoogte van de pagina*/
+    object-fit: cover;      /*Gaat over de hele div heen*/
+}
+
+/* Carousel item 2 */
+.img-over-video {
+    position: absolute;                 /*Positie absoluut t.o.v. c-item*/
+    top: 50%;                           /*50% verplaats t.o.v. de bovenkant van het schem*/
+    right: 0;                           /*Geen afstand van de rechterkant van het scherm*/
+    transform: translate(0, -50%);      /*Positioneert het in het midden*/
+    max-width: 100%;                    /*Maximale breedte*/
+    max-height: 100%;                   /*Maximale hoogte*/
+}
+
+/* Carousel item 3 */
+.c-item3 {
+    position: absolute;                 /*Positie absoluut t.o.v. c-item*/
+    top: 50%;                           /*50% verplaats t.o.v. de bovenkant van het schem*/
+    left: 50%;                          /*50% verplaats t.o.v. de linker kant van het schem*/
+    transform: translate(-50%, -50%);   /*Positioneert het in het midden*/
+    text-align: center;                 /*Positioneert text in het midden van de div*/
+    width: 100%;                        /*Div is 100% breed*/
+}
+
+.c-img3 {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.ourServices{
+    height: 90vh;
+    background-image: url("./assets/image/pagina4/backround.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.aboutUs{
+    height: 90vh;
+    background-image: url("./assets/image/pagina5/backround.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.contactUs{
+    height: 90vh;
+    background-image: url("./assets/image/pagina6/backround.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.page{
+    background-color: #626189;
+}

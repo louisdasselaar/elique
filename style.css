@@ -13,9 +13,15 @@
 }
 
 /* Header */
-header{
-    position: relative;
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     padding: 0 2rem;
+    background-color: transparent; /* Semi-transparante achtergrond */
+    height: 60px; /* Stel de hoogte van je header in */
+    z-index: 10;
 }
 
 /* Navbar */
@@ -102,26 +108,35 @@ header{
 }
 
 /* Frontpage */
-.home{
+.home {
     width: 100%;
-    height: calc(80vh - 60px);
+    height: 70vh;
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
+    justify-content: center; /* Centreert de inhoud verticaal */
+    align-items: center; /* Centreert de inhoud horizontaal */
+    overflow: hidden;
 }
 
-.homeVideo{
+.homeVideo {
     position: absolute;
-    right: 0;
+    left: 50%;
     bottom: 0;
+    transform: translateX(-50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
     z-index: -1;
 }
 
-.homeContent{
+.homeContent {
+    position: relative;
+    z-index: 2; /* Zorgt ervoor dat de tekst boven de video staat */
+    padding-top: 60px; /* Pas deze waarde aan aan de hoogte van je header */
     text-align: center;
+    color: white;
 }
 
 .homeContent h1{

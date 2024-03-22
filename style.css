@@ -4,6 +4,8 @@
     box-sizing: border-box;
 
     color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
 }
 
 .body{
@@ -16,7 +18,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 10px 100px; /* Aangepaste padding */
+    padding: 10px 100px; 
     background-color: transparent;
     display: flex;
     justify-content: space-between;
@@ -25,8 +27,8 @@
 }
 
 .logo img {
-    height: 50px; /* Voorbeeld van een vaste hoogte */
-    width: auto; /* Behoudt de aspect ratio van het logo */
+    height: 50px; 
+    width: auto; 
 }
 
 .logo{

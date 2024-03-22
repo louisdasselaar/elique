@@ -30,7 +30,7 @@ header{
 }
 
 .logo img {
-    height: 50px;
+    height: 60px;
     width: auto;
 }
 
@@ -72,14 +72,45 @@ header{
     display: none;
 }
 
-/* Frontpage */
-.home{
-    width: 100%;
-    height: 80vh;
-    position: relative;
+.dropDownMenu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 300px;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropDownMenu.open{
+    height: 240px;
+}
+
+.dropDownMenu li{
+    padding: 0.7rem;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.dropDownMenu li a{
+    color: white;
+}
+
+/* Frontpage */
+.home{
+    width: 100%;
+    height: calc(80vh - 60px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
 }
 
 .homeVideo{
@@ -89,6 +120,56 @@ header{
     z-index: -1;
 }
 
+.homeContent{
+    text-align: center;
+}
+
+.homeContent h1{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+
 .space{
     height: 200vh;
+}
+
+/* Responsive design */
+@media(max-width: 992px) {
+    /* Navbar */
+    .navbar .navContent{
+        display: none;
+    }
+
+    .navbar .toggleBtn{
+        display: block;
+    }
+
+    .dropDownMenu{
+        display: block;
+        z-index: 100;
+    }
+
+    .homeContent h1{
+        font-size: 2.8rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media(max-width: 576px) {
+    /* Navbar */
+    .dropDownMenu{
+        left: 2rem;
+        width: unset;
+        top: 70px;
+    }
+
+    .homeContent h1{
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .homeContent h2{
+        font-size: 1rem;
+    }
 }

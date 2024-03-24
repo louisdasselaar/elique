@@ -205,51 +205,54 @@ header {
 .service {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Veranderd naar flex-start */
+    justify-content: flex-start;
     align-items: center;
-    height: 90vh;
-    position: relative; /* Voeg dit toe als het nog niet aanwezig is */
-
-    background-image: url(/assets/image/pagina3/lights.png);
-    background-size: cover; 
-    overflow: hidden; /* Zorgt ervoor dat de pseudo-element niet buiten de container steekt */
+    height: auto;
+    min-height: 90vh;
+    position: relative;
+    background-image: url('/assets/image/pagina3/lights.png');
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
 }
 
 .service::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: inherit; /* Neemt de achtergrond van de .service */
-  filter: brightness(60%); /* Pas de helderheid aan zoals gewenst, hier is het op 50% gezet */
-}
-
-  .serviceHeading {
+    content: "";
     position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-  }
-
-.serviceHeading h2{
-    font-size: 3rem;
-}
-
-.serviceHeading h2{
-    font-size: 3rem;
-}
-
-.serviceContainer{
-    position: absolute;
-    bottom: 15%;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: brightness(50%);
+    z-index: 0; /* Zorg ervoor dat dit onder je inhoud valt maar boven de achtergrond */
+}
 
+.service > * {
+    position: relative;
+    z-index: 1;
+}
+
+.serviceHeading {
+    text-align: center;
+    margin: 5%;
+}
+
+.serviceHeading h2{
+    font-size: 3rem;
+}
+
+.serviceHeading h2{
+    font-size: 3rem;
+}
+
+.serviceContainer {
+    width: 100%;
+    
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
+    align-items: flex-start; 
 }
 
 .serviceHero{
@@ -332,6 +335,15 @@ header {
     .experience h3{
         font-size: 1.7rem;
         margin: 1.5rem 5% 0; 
+    }
+
+    /* Services */
+    .serviceContainer {
+        align-items: center;
+      }
+
+    .serviceHero{
+        margin-bottom: 8%;
     }
 }
 

@@ -149,7 +149,7 @@ header {
 
 /* Experience */
 .experience{
-    height: 100vh;
+    height: 90vh;
     background-image: url(/assets/image/pagina2/backround.png);
     background-size: cover; 
     background-position: center; 
@@ -199,6 +199,98 @@ header {
     font-size: 2rem;
     margin: 1.5rem 12.5% 0; 
     text-align: center;
+}
+
+/* Our services */
+.service {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Veranderd naar flex-start */
+    align-items: center;
+    height: 90vh;
+    position: relative; /* Voeg dit toe als het nog niet aanwezig is */
+
+    background-image: url(/assets/image/pagina3/lights.png);
+    background-size: cover; 
+    overflow: hidden; /* Zorgt ervoor dat de pseudo-element niet buiten de container steekt */
+}
+
+.service::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit; /* Neemt de achtergrond van de .service */
+  filter: brightness(60%); /* Pas de helderheid aan zoals gewenst, hier is het op 50% gezet */
+}
+
+  .serviceHeading {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+.serviceHeading h2{
+    font-size: 3rem;
+}
+
+.serviceHeading h2{
+    font-size: 3rem;
+}
+
+.serviceContainer{
+    position: absolute;
+    bottom: 15%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.serviceHero{
+    width: 300px;
+    margin: 0 25px
+}
+
+.serviceHeroImg{
+    height: 200px;
+}
+
+.serviceHeroImg img {
+    object-fit: cover;
+    height: 100%; 
+    width: 100%;
+    outline: 2px solid black;
+}
+
+.serviceHeroVid {
+    width: 100%; /* Zet de breedte van de container */
+    height: 200px; /* Een vaste hoogte, of gebruik een percentage van de viewport hoogte als je dat wenst */
+    overflow: hidden; /* Voorkomt dat de video buiten deze container uitsteekt */
+    outline: 2px solid black;
+}
+
+.serviceVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Zorgt ervoor dat de video de container vult zonder de verhoudingen te verliezen */
+}
+
+.serviceHeroHeading{
+    margin: 15px 0 0 0;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-right {
+    text-align: right;
 }
 
 /* Responsive design */

@@ -139,7 +139,7 @@ header {
 }
 
 .homeContent h1{
-    font-size: 5rem;
+    font-size: 4rem;
     margin-bottom: 1rem;
 }
 
@@ -161,7 +161,9 @@ header {
  }
 
 .experience h2{
-    margin-bottom: 2rem;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 .experienceContainer{
@@ -194,7 +196,8 @@ header {
 } 
 
 .experience h3{
-    margin: 2.5rem 10% 0; 
+    font-size: 2rem;
+    margin: 1.5rem 12.5% 0; 
     text-align: center;
 }
 
@@ -215,8 +218,12 @@ header {
     }
 
     .homeContent h1{
-        font-size: 2.8rem;
+        font-size: 3rem;
         margin-bottom: 0.5rem;
+    }
+
+    .homeContent h2{
+        font-size: 2rem;
     }
 
     /* Experience */
@@ -224,6 +231,15 @@ header {
         width: 280px;
         height: 350px;
         margin: 15px;
+    }
+
+    .experience h2{
+        font-size: 2rem;
+    }
+
+    .experience h3{
+        font-size: 1.7rem;
+        margin: 1.5rem 5% 0; 
     }
 }
 
@@ -241,7 +257,7 @@ header {
     }
 
     .homeContent h2{
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
     /* Experience */
@@ -249,5 +265,14 @@ header {
         width: 160px;
         height: 200px;
         margin: 5px;
+    }
+
+    .experience h2{
+        font-size: 1.5rem;
+    }
+
+    .experience h3{
+        font-size: 1rem;
+        margin: 1.5rem 2.5% 0; 
     }
 }

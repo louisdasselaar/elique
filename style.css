@@ -1,94 +1,186 @@
-/*Standard rules*/
-.t-text{
+/* General styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     color: white;
-
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
-    font-style: bold;
 }
 
-.p-text{
+.body{
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 2rem;
+    background-color: transparent; /* Semi-transparante achtergrond */
+    height: 60px; /* Stel de hoogte van je header in */
+    z-index: 10;
+}
+
+/* Navbar */
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+.navbar .navContent{
+    display: flex;
+    gap: 2rem;
+}
+
+.navContent li{
+    list-style: none;
+    position: relative;
+}
+
+.navContent a{
+    font-size: 1.2rem;
+    text-decoration: none;
     color: white;
 }
 
-/* Front page */
-/* CSS to ensure video fits within the div */
-.f-page {
-    width: 100%; /* Ensure the div takes up the full width */
-    height: 80vh; /* Set the height to 80% of the viewport height */
-    overflow: hidden; /* Hide any content that overflows the div */
-    position: relative; /* Set position relative to properly handle absolutely positioned video */
-  }
-  
-  .headervideo {
-    width: 100%; /* Make the video fill the width of its container */
-    height: auto; /* Maintain the aspect ratio */
-    position: absolute; /* Position video absolutely within its container */
-    top: 30%; /* Push the video up by 50% */
-    left: 0; /* Align video to the left */
-    transform: translateY(-50%); /* Adjust position to center vertically */
-  }
-
-/* Carousel pages */
-.c-item{
-    height: 60vh;          /*Hoogte van de pagina*/
-    position: relative;     /*Andere child elementen kan je absoluut plaatsen t.o.v. dit item*/
+.navContent a::before {
+    content: '';
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: 0.3s;
 }
 
-/* Carousel item 1 */
-.c-img1{
-    height: 100%;           /*Volledige hoogte van de pagina*/
-    object-fit: cover;      /*Gaat over de hele div heen*/
-}
-
-/* Carousel item 2 */
-.img-over-video {
-    position: absolute;                 /*Positie absoluut t.o.v. c-item*/
-    top: 50%;                           /*50% verplaats t.o.v. de bovenkant van het schem*/
-    right: 0;                           /*Geen afstand van de rechterkant van het scherm*/
-    transform: translate(0, -50%);      /*Positioneert het in het midden*/
-    max-width: 100%;                    /*Maximale breedte*/
-    max-height: 100%;                   /*Maximale hoogte*/
-}
-
-/* Carousel item 3 */
-.c-item3 {
-    position: absolute;                 /*Positie absoluut t.o.v. c-item*/
-    top: 50%;                           /*50% verplaats t.o.v. de bovenkant van het schem*/
-    left: 50%;                          /*50% verplaats t.o.v. de linker kant van het schem*/
-    transform: translate(-50%, -50%);   /*Positioneert het in het midden*/
-    text-align: center;                 /*Positioneert text in het midden van de div*/
-    width: 100%;                        /*Div is 100% breed*/
-}
-
-.c-img3 {
-    height: 100%;
+.navContent a:hover::before {
     width: 100%;
-    object-fit: cover;
-    object-position: center;
 }
 
-.ourServices{
+.navbar .toggleBtn{
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.dropDownMenu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 300px;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropDownMenu.open{
+    height: 240px;
+}
+
+.dropDownMenu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropDownMenu li a{
+    color: white;
+}
+
+/* Frontpage */
+.home {
+    width: 100%;
     height: 90vh;
-    background-image: url("./assets/image/pagina4/backround.png");
-    background-position: center;
-    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centreert de inhoud verticaal */
+    align-items: center; /* Centreert de inhoud horizontaal */
+    overflow: hidden;
 }
 
-.aboutUs{
-    height: 90vh;
-    background-image: url("./assets/image/pagina5/backround.png");
-    background-position: center;
-    background-size: cover;
+.homeVideo {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
 }
 
-.contactUs{
-    height: 90vh;
-    background-image: url("./assets/image/pagina6/backround.png");
-    background-position: center;
-    background-size: cover;
+.homeContent {
+    position: relative;
+    padding-top: 60px; 
+    text-align: center;
+    color: white;
 }
 
-.page{
-    background-color: #626189;
+.homeContent h1{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+
+
+/* Responsive design */
+@media(max-width: 992px) {
+    /* Navbar */
+    .navbar .navContent{
+        display: none;
+    }
+
+    .navbar .toggleBtn{
+        display: block;
+    }
+
+    .dropDownMenu{
+        display: block;
+        z-index: 100;
+    }
+
+    .homeContent h1{
+        font-size: 2.8rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media(max-width: 576px) {
+    /* Navbar */
+    .dropDownMenu{
+        left: 2rem;
+        width: unset;
+        top: 70px;
+    }
+
+    .homeContent h1{
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .homeContent h2{
+        font-size: 1rem;
+    }
 }

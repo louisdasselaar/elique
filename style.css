@@ -242,10 +242,6 @@ header {
     font-size: 3rem;
 }
 
-.serviceHeading h2{
-    font-size: 3rem;
-}
-
 .serviceContainer {
     width: 100%;
     
@@ -297,6 +293,81 @@ header {
 }
 
 /* Testimonials */
+.testimonial {
+    height: 90vh;
+    background-image: url('assets/image/pagina2/backround.png');
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+}
+
+.testimonialHeading {
+    text-align: center;
+    position: absolute;
+    top: 5%; 
+    left: 5%; 
+}
+
+.testimonialHeading h2{
+    font-size: 3rem;
+}
+
+.quote1 {
+    position: absolute;
+    top: 27%;
+    left: 5%;
+}
+
+.quote1 .quotetekst{
+    width: 500px;
+}
+
+.quote2 {
+    position: absolute;
+    top: 5%;
+    left: 40%; /* Adjusted to spread quotes around the right side */
+}
+
+.quote3 {
+    position: absolute;
+    top: 60%;
+    left: 45%; /* Adjusted to spread quotes around the right side */
+}
+
+.quote4 {
+    position: absolute;
+    top: 55%;
+    left: 70%; /* Adjusted to spread quotes around the right side */
+}
+
+.quote4 .quotetekst{
+    width: 350px;
+}
+
+.quote5 {
+    position: absolute;
+    top: 10%;
+    left: 67%; /* Adjusted to spread quotes around the right side */
+}
+
+.quotation {
+    position: relative;
+    width: 200px;
+    height: 200px; 
+
+    background-image: url('assets/image/pagina4/quote.png');
+    background-size: cover;
+    background-position: top left; 
+}
+
+.quotetekst {
+    position: absolute;
+    width: 300px;
+    top: 32%;
+    left: 25%;
+    text-align: left;
+}
 
 
 

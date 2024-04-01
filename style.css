@@ -418,6 +418,69 @@ header {
     font-size: 1.3rem;
 }
 
+.contactUs{
+    position: relative;
+    height: 90vh;
+
+    background-image: url('assets/image/pagina6/backround.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.contactImage{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60%;
+    height: 100%;
+
+    background-image: url('assets/image/pagina6/brein.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.contactContainer{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 40%;
+    height: 100%;
+
+    padding-left: 5%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.contactUsHeading h2{
+    font-size: 3rem;
+}
+
+.contactUsHeading h3{
+    font-size: 2rem;
+}
+
+.contactInfo{
+    width: 80%;
+}
+
+.contactInfo div{
+    margin-bottom: 5%;
+}
+
+.contact h5{
+    margin: 0;
+}
+
+.contact p{
+    margin: 0;
+}
+
+
+
 /* Responsive design */
 @media(max-width: 1024px) {
     /* Navbar */

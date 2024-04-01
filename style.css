@@ -20,7 +20,7 @@ header {
     width: 100%;
     padding: 0 2rem;
     background-color: rgba(0, 0, 0, 0.3);
-    height: 60px; /* Stel de hoogte van je header in */
+    height: 60px; 
     z-index: 10;
 }
 
@@ -114,8 +114,8 @@ header {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centreert de inhoud verticaal */
-    align-items: center; /* Centreert de inhoud horizontaal */
+    justify-content: center; 
+    align-items: center; 
     overflow: hidden;
 }
 
@@ -225,7 +225,7 @@ header {
     height: 100%;
     background: inherit;
     filter: brightness(70%);
-    z-index: 0; /* Zorg ervoor dat dit onder je inhoud valt maar boven de achtergrond */
+    z-index: 0; ]
 }
 
 .service > * {
@@ -268,16 +268,16 @@ header {
 }
 
 .serviceHeroVid {
-    width: 100%; /* Zet de breedte van de container */
-    height: 200px; /* Een vaste hoogte, of gebruik een percentage van de viewport hoogte als je dat wenst */
-    overflow: hidden; /* Voorkomt dat de video buiten deze container uitsteekt */
+    width: 100%; 
+    height: 200px;
+    overflow: hidden; 
     outline: 2px solid black;
 }
 
 .serviceVideo {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Zorgt ervoor dat de video de container vult zonder de verhoudingen te verliezen */
+    object-fit: cover; 
 }
 
 .serviceHeroHeading{
@@ -326,19 +326,19 @@ header {
 .quote2 {
     position: absolute;
     top: 5%;
-    left: 40%; /* Adjusted to spread quotes around the right side */
+    left: 40%; 
 }
 
 .quote3 {
     position: absolute;
     top: 60%;
-    left: 45%; /* Adjusted to spread quotes around the right side */
+    left: 45%; 
 }
 
 .quote4 {
     position: absolute;
     top: 55%;
-    left: 70%; /* Adjusted to spread quotes around the right side */
+    left: 70%; 
 }
 
 .quote4 .quotetekst{
@@ -348,7 +348,7 @@ header {
 .quote5 {
     position: absolute;
     top: 10%;
-    left: 67%; /* Adjusted to spread quotes around the right side */
+    left: 67%; 
 }
 
 .quotation {
@@ -369,7 +369,54 @@ header {
     text-align: left;
 }
 
+/* About Us */
+.aboutUs{
+    position: relative;
+    height: 90vh;
 
+    background-image: url('assets/image/pagina5/backround.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.aboutUsHeading {
+    text-align: center;
+    position: absolute;
+    top: 5%; 
+    left: 5%; 
+}
+
+.aboutUsHeading h2{
+    font-size: 3rem;
+}
+
+.aboutUsImage
+{
+    position: absolute;
+    width: 100%;
+    height: 75vh;
+    bottom: 0;
+
+    background-image: url('assets/image/pagina5/owners.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.aboutUsTekst{
+    position: absolute;
+    top: 30%;
+    left: 5%;
+
+    width: 40%;
+    
+    background-image: url(assets/image/pagina5/backround.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.aboutUsTekst p{
+    font-size: 1.3rem;
+}
 
 /* Responsive design */
 @media(max-width: 1024px) {

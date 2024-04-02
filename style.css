@@ -492,19 +492,6 @@ header {
     margin: 0;
 } 
 
-/* Footer */
-.footer {
-    background-color: #000; /* Zwart */
-    color: #fff; /* Witte tekst */
-  }
-  
-  .footer a {
-    color: #fff; /* Maakt alle links binnen de footer wit */
-  }
-  
-  .footer a:hover {
-    color: #ccc; /* Lichtgrijze kleur voor hover-effect */
-  }
 /* Responsive design */
 @media(max-width: 1024px) {
     /* Navbar */

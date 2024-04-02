@@ -110,7 +110,7 @@ header {
 /* Frontpage */
 .home{
     width: 100%;
-    height: 60vh;
+    height: 70vh;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -149,15 +149,18 @@ header {
 
 /* Experience */
 .experience{
-    height: 90vh;
-    background-image: url(assets/image/pagina2/backround.png);
+    height: 50vh;
+    /* background-image: url(assets/image/pagina2/page2_stage.png);
     background-size: cover; 
-    background-position: center; 
+    background-position: center;  */
+
+    background-color: #9f9c9d;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 30px;
  }
 
 .experience h2{
@@ -167,15 +170,16 @@ header {
 }
 
 .experienceContainer{
+    width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
+    gap: 100px;
 }
 
 .experienceContainer div{
-    width: 360px;
-    height: 450px;
-    margin: 20px;
+    width: 30vh;
+    height: 30vh;
 }
 
 .experience-stage, .experience-screen, .experience-party{
@@ -225,7 +229,7 @@ header {
     height: 100%;
     background: inherit;
     filter: brightness(70%);
-    z-index: 0; ]
+    z-index: 0; 
 }
 
 .service > * {
@@ -294,28 +298,41 @@ header {
 
 /* Testimonials */
 .testimonial {
-    height: 90vh;
-    background-image: url('assets/image/pagina2/backround.png');
+    height: 50vh;
+    /* background-image: url('assets/image/pagina2/backround.png');
     background-size: cover;
-    background-position: center;
+    background-position: center; */
 
+    /* background-color: #696973;
+    #1e232d
+#42454f
+#6c6b72
+#9f9c9d
+#f9f8f9
+    */
+    background-color: #9f9c9d;
     position: relative;
 }
+
+/* .temp{
+    height: 30vh;
+    background-color: #6c6b72;
+} */
 
 .testimonialHeading {
     text-align: center;
     position: absolute;
-    top: 5%; 
+    top: 15%; 
     left: 5%; 
 }
 
 .testimonialHeading h2{
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 .quote1 {
     position: absolute;
-    top: 27%;
+    top: 40%;
     left: 5%;
 }
 
@@ -331,7 +348,7 @@ header {
 
 .quote3 {
     position: absolute;
-    top: 60%;
+    top: 55%;
     left: 45%; 
 }
 
@@ -347,14 +364,14 @@ header {
 
 .quote5 {
     position: absolute;
-    top: 10%;
+    top: 7%;
     left: 67%; 
 }
 
 .quotation {
     position: relative;
-    width: 200px;
-    height: 200px; 
+    width: 150px;
+    height: 150px; 
 
     background-image: url('assets/image/pagina4/quote.png');
     background-size: cover;
@@ -369,21 +386,28 @@ header {
     text-align: left;
 }
 
+.quotetekst p{
+    font-size: 0.8em;
+}
+
 /* About Us */
 .aboutUs{
     position: relative;
     height: 90vh;
 
-    background-image: url('assets/image/pagina5/backround.png');
+    /* background-image: url('assets/image/pagina5/backround.png');
     background-position: center;
-    background-size: cover;
+    background-size: cover; */
+
+    background-color: #6c6b72;
 }
 
 .aboutUsHeading {
     text-align: center;
     position: absolute;
     top: 5%; 
-    left: 5%; 
+    left: 50%; 
+    transform: translateX(-50%);
 }
 
 .aboutUsHeading h2{
@@ -478,6 +502,89 @@ header {
 .contact p{
     margin: 0;
 }
+
+/* Footer */
+/* Basisopmaak */
+footer {
+    color: #fff;
+    background-color: grey;
+    padding: 2em;
+}
+
+footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer p {
+    max-width: 25em;
+    font-size: 0.9em;
+    line-height: 23px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Container voor de footer */
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+/* Links */
+.footer .menu li {
+    display: inline-block;
+    margin: 1em;
+}
+
+.footer .menu a {
+    transition: 0.3s;
+    font-weight: 300;
+    color: #ccc;
+}
+
+.footer .menu a:hover {
+    color: #fff;
+}
+
+/* Bedrijfsnaam */
+.bedrijf {
+    display: block;
+    font-size: 1.8em;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Social media iconen */
+.media li {
+    display: inline-block;
+    margin: 0.5em;
+}
+
+.media a {
+    font-size: 1.1em;
+    width: 2em;
+    height: 2em;
+    border: 1px #fff solid;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.media a:hover {
+    background: #fff;
+    color: #111;
+}
+
 
 
 

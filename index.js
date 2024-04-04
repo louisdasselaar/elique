@@ -26,5 +26,5 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Stel de 'checked' status in op de nieuwe huidige slide
         slides[currentSlide].checked = true;
-    }, 3000); // Verander elke 3000 milliseconden (3 seconden) van slide
+    }, 10000); // Verander elke 3000 milliseconden (3 seconden) van slide
 });

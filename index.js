@@ -48,3 +48,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 8000); // Verander elke 3000 milliseconden (3 seconden) van slide
 });
 
+// Email sturen via contact us
+function openEmailPopup() {
+    // Open de e-mailtoepassing met het specifieke e-mailadres
+    window.location.href = "mailto:l.dasselaar02@gmail.com";
+  }

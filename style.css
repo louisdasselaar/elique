@@ -534,6 +534,17 @@ header {
 
 .contactUsHeading{
     width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.contactUsHeadingContainer{
+    cursor: pointer;
+}
+
+.contactUsHeadingContainer:hover{
+    color: #a8b0b8;
 }
 
 .contactUsHeading h3{
@@ -593,7 +604,7 @@ header {
 /* Footer */
 .footerpage{
     height: 20vh;
-    background-color: #6c6b72;
+    background-color: #a8b0b8;
 
     display: flex;
     justify-content: end;

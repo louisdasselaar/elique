@@ -27,7 +27,6 @@
 </head>
 
 <body>
-
   <!-- Header -->
   <div id="home" class="home">
     <header class="header">
@@ -211,9 +210,11 @@
         </div>
       </div>
 
-      <div id="contact" class="contactUsHeading">
-        <h3>Let's work together</h3>
-        <h2>CONTACT US!</h2>
+      <div id="contact" class="contactUsHeading"  onclick="openEmailPopup()">
+        <div class="contactUsHeadingContainer">
+          <h3>Let's work together</h3>
+          <h2>CONTACT US!</h2>
+        </div>
       </div>
 
       <div class="contactUsContainer">
@@ -247,12 +248,11 @@
                 <span class="mb-3 mb-md-0">© 2024 Elique-Events</span>
             </div>
     
-            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                <li class="ms-3 footericon"><i class="fa-brands fa-linkedin"></i></li>
-            </ul>
+            <a href="https://www.linkedin.com/" target="_blank" class="footericon">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
         </footer>
-    </div>
-    
+      </div>
     </div>
   </main>
   
@@ -262,5 +262,4 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 </html>

@@ -217,7 +217,7 @@ header {
 } 
 
 .experience h3{
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin: 1.5rem 12.5% 0; 
     text-align: center;
 }
@@ -266,7 +266,7 @@ header {
 
 .serviceContainer {
     width: 100%;
-    
+
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -306,6 +306,14 @@ header {
     margin: 15px 0 0 0;
 }
 
+.serviceHeroHeading h4{
+    font-family: "DM Sans", sans-serif;
+}
+
+.serviceHeroText{
+    font-family: "DM Sans", sans-serif;
+}
+
 .align-left {
     text-align: left;
 }
@@ -324,7 +332,7 @@ header {
     align-items: center;
 
     background-color: #020302;
-    gap: 20px;
+    gap: 10px;
 }
 
 .testimonialsHeading h2{
@@ -381,14 +389,17 @@ header {
  #slide4:checked ~ #slides .inner {
     margin-left: -300%;
  }
+ #slide5:checked ~ #slides .inner {
+    margin-left: -400%;
+ }
  #slides .inner {
     transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
-    width: 400%;
-    /* line-height: 0; */
+    width: 500%;
+    line-height: 0;
     height: 200px;
  }
  #slides .slide {
-    width: 25%;
+    width: 20%;
     float:left;
     display: flex;
     justify-content: center;
@@ -396,18 +407,20 @@ header {
     height: 100%;
     color: #fff;
  }
- #slides .slide_1 {
-    /* background: #00171F; */
+
+ .slide_3 .slide-content h4{
+    font-size: 1.2rem;
  }
- #slides .slide_2 {
-    /* background: #003459; */
- }
- #slides .slide_3 {
-    /* background: #007EA7; */
- }
- #slides .slide_4 {
-    /* background: #00A8E8; */
- }
+
+.slide-content h4{
+    font-family: "DM Sans", sans-serif;
+    margin-bottom: 4%;
+}
+
+.slide-content p{
+    font-family: "DM Sans", sans-serif;
+    font-weight: bold;
+}
 
  #controls {
     margin: -180px 0 0 0;
@@ -429,7 +442,8 @@ header {
  #slide1:checked ~ #controls label:nth-child(2),
  #slide2:checked ~ #controls label:nth-child(3),
  #slide3:checked ~ #controls label:nth-child(4),
- #slide4:checked ~ #controls label:nth-child(1) {
+ #slide4:checked ~ #controls label:nth-child(5),
+ #slide5:checked ~ #controls label:nth-child(1) {
     background: url(https://image.flaticon.com/icons/svg/130/130884.svg) no-repeat;
     float:right;
     margin: 0 -50px 0 0;
@@ -438,7 +452,8 @@ header {
  #slide1:checked ~ #controls label:nth-last-child(2),
  #slide2:checked ~ #controls label:nth-last-child(3),
  #slide3:checked ~ #controls label:nth-last-child(4),
- #slide4:checked ~ #controls label:nth-last-child(1) {
+ #slide4:checked ~ #controls label:nth-last-child(5),
+ #slide5:checked ~ #controls label:nth-last-child(1) {
     background: url(https://image.flaticon.com/icons/svg/130/130882.svg) no-repeat;
     float:left;
     margin: 0 0 0 -50px;
@@ -459,7 +474,8 @@ header {
  #slide1:checked ~ #bullets label:nth-child(1),
  #slide2:checked ~ #bullets label:nth-child(2),
  #slide3:checked ~ #bullets label:nth-child(3),
- #slide4:checked ~ #bullets label:nth-child(4) {
+ #slide4:checked ~ #bullets label:nth-child(4),
+ #slide5:checked ~ #bullets label:nth-child(5) {
     background: #444;
  }
 
@@ -512,6 +528,10 @@ header {
     font-size: 1.2rem;
 }
 
+.aboutUsTekst p{
+    font-family: "DM Sans", sans-serif;
+}
+
 .contactUsHeading{
     width: 100%;
 }
@@ -562,10 +582,12 @@ header {
 
 .contact h5{
     margin: 0;
+    font-family: "DM Sans", sans-serif;
 }
 
 .contact p{
     margin: 0;
+    font-family: "DM Sans", sans-serif;
 } 
 
 /* Footer */

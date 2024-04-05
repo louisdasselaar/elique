@@ -21,6 +21,7 @@
   <style>
     @import url('https://fonts.cdnfonts.com/css/bodoniflf');
     @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Montserrat&family=Roboto:wght@400&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:wght@500&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
   </style>
 </head>
@@ -28,18 +29,18 @@
 <body>
 
   <!-- Header -->
-  <div class="home">
+  <div id="home" class="home">
     <header class="header">
       <div class="navbar">
         <div class="logo"><a href="#"><img src="assets/image/logo/logowit.png" alt="logo"
               class="logoimg"></a></div>
 
         <ul class="navContent">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Testimonials</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#service">Services</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#aboutUs">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
 
         <div class="toggleBtn">
@@ -48,11 +49,11 @@
       </div>
 
       <div class="dropDownMenu">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">About us</a></li>
-        <li><a href="#">Testimonials</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#aboutUs">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
       </div>
     </header>
 
@@ -68,7 +69,7 @@
 
   <main>
     <!-- Experience -->
-    <div class="experience">
+    <div id="experience" class="experience">
       <div class="experienceHeading">
         <h2>Flawless execution is part of our DNA</h2>
       </div>
@@ -80,7 +81,7 @@
     </div>
 
     <!-- Our services -->
-    <div class="service">
+    <div id="service" class="service">
       <div class="serviceHeading">
         <h2>OUR SERVICES</h2>
         <h3>From event concepts to interactive experiences, we've got you covered!</h3>
@@ -124,7 +125,7 @@
     </div>
 
     <!-- Testimonials -->
-    <div class="testimonials">
+    <div id="testimonials" class="testimonials">
       <div class="divider"><hr></div>
 
       <div class="testimonialsHeading"><h2>TESTIMONIALS</h2></div>
@@ -134,45 +135,40 @@
         <input type="radio" name="slider" id="slide2">
         <input type="radio" name="slider" id="slide3">
         <input type="radio" name="slider" id="slide4">
+        <input type="radio" name="slider" id="slide5">
         <div id="slides">
          <div id="overflow">
             <div class="inner">
                <div class="slide slide_1">
                   <div class="slide-content">
-                     <h4>"Very strong strategic partner, very proactive and very well organised.
-                          We have multiplied by 5 the number of attendees since 2019 and they have been instrumental.
-                          Would recommend 100%."</h4>
-                      <p>A very happy client :)</p>
+                     <h4>'What I appreciate most is the attention to detail, focus on attendee experience, and availability of the team.  They take the time to understand the intended audience to bring creativity to each event, customizing it for the audience.  They go above and beyond to ensure a positive experience for everyone!'</h4>
+                      <p>Global Head Market Development</p>
                   </div>
                </div>
                <div class="slide slide_2">
                   <div class="slide-content">
-                    <h4>"Full of energy, knowledge and passion for events.
-                      Extremely reliable professional, will not rest until things get done.
-                      incredible and a valuable asset for any team."</h4>
-                    <p>A very happy client :)</p>
+                    <h4>'Very strong strategic partner, very proactive and very well organised. We have multiplied by 5 the number of attendees since 2019 and they have been instrumental. Would recommend 100%.'</h4>
+                    <p>Commercial Lead</p>
                   </div>
                </div>
                <div class="slide slide_3">
                   <div class="slide-content">
-                    <h4>"What I appreciate most is the attention to detail, focus on attendee experience, and availability of the
-                      team.
-                      They take the time to understand the intended audience to bring creativity to each event, customizing it
-                      for the audience.
-                      They go above and beyond to ensure a positive experience for everyone!"</h4>
-                    <p>A very happy client :)</p>
+                    <h4>'I have worked with both Angelique and Emma multiple times and can highly recommend them. They are both extremely professional. Planning even the most complicated event is perfectly orchestrated with a lot of attention to detail. I like to raise the bar for my events every year and surprise the audience with new and different ways to approach engagement and content delivery. Thanks to the creativity of the Elique team, we have been able to do just that and delight attendees with truly memorable and impactful experiences. I am looking forward to working with them again in the future.'</h4>
+                    <p>Global Franchise Head -Executive leadership</p>
                   </div>
                </div>
                <div class="slide slide_4">
                   <div class="slide-content">
-                    <h4>"They were phenomenal!
-                      From coordination end-to-end logistics to creating the best experience for attendees, they handled
-                      everything seamlessly.
-                      Their attention to detais and professionalism made the event a huge success.
-                      I highly recommend them for any event!"</h4>
-                    <p>A very happy client :)</p>
+                    <h4>'Full of energy, knowledge and passion for events. Extremely reliable professional, will not rest until things get done. Incredible and a valuable asset for any team'</h4>
+                    <p>Head of Operationds</p>
                   </div>
                </div>
+               <div class="slide slide_5">
+                <div class="slide-content">
+                  <h4>'They were phenomenal! From coordination end-to-end logistics to creating the best experience for attendees, they handled everything seamlessly. Their attention to detais and professionalism made the event a huge success. I highly recommend them for any event!'</h4>
+                  <p>Transformation Lead</p>
+                </div>
+             </div>
             </div>
          </div>
         </div>
@@ -181,20 +177,20 @@
           <label for="slide2"></label>
           <label for="slide3"></label>
           <label for="slide4"></label>
+          <label for="slide5"></label>
         </div>
         <div id="bullets">
           <label for="slide1"></label>
           <label for="slide2"></label>
           <label for="slide3"></label>
           <label for="slide4"></label>
+          <label for="slide5"></label>
         </div>
       </div>
     </div>
     
-
-
     <!-- About us -->
-    <div class="aboutUsHeading">
+    <div id="aboutUs" class="aboutUsHeading">
       <h2>ABOUT US</h2>
     </div>
 
@@ -215,7 +211,7 @@
         </div>
       </div>
 
-      <div class="contactUsHeading">
+      <div id="contact" class="contactUsHeading">
         <h3>Let's work together</h3>
         <h2>CONTACT US!</h2>
       </div>

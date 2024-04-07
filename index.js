@@ -88,6 +88,6 @@ function openEmailPopup() {
       .then(() => console.log('E-mail gedeeld'))
       .catch((error) => console.error('Fout bij delen van e-mail', error));
     } else {
-      window.location.href = "mailto:l.dasselaar02@gmail.com";
+      window.location.href = "mailto:info@elique-events.com";
     }
   }

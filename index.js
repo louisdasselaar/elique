@@ -29,14 +29,54 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //Testimonial Carousel
 document.addEventListener('DOMContentLoaded', function() {
-    const slides = document.querySelectorAll('#slider input[type="radio"]');
-    let currentSlide = 0;
+  const slides = document.querySelectorAll('#slider input[type="radio"]');
+  const controls = document.querySelectorAll('#controls label');
+  let slideInterval;
 
-    setInterval(function() {
-        slides[currentSlide].checked = false;
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].checked = true;
-    }, 8000); 
+  function showSlide(index) {
+      slides.forEach((slide, idx) => {
+          slide.checked = (idx === index);
+      });
+      updateControls(index);
+  }
+
+  function updateControls(index) {
+      controls.forEach((control, idx) => {
+          control.classList.toggle('active', idx === index);
+      });
+  }
+
+  function startSlideShow() {
+      clearInterval(slideInterval);
+      slideInterval = setInterval(nextSlide, 6000);
+  }
+
+  function nextSlide() {
+      let currentSlideIndex = Array.from(slides).findIndex(slide => slide.checked);
+      let nextSlideIndex = (currentSlideIndex + 1) % slides.length;
+      showSlide(nextSlideIndex);
+  }
+
+  // Start de diavoorstelling
+  startSlideShow();
+
+  // Pauzeer de diavoorstelling wanneer de gebruiker eroverheen hovert
+  document.getElementById('slider').addEventListener('mouseenter', function() {
+      clearInterval(slideInterval);
+  });
+
+  // Hervat de diavoorstelling wanneer de gebruiker de muis verlaat
+  document.getElementById('slider').addEventListener('mouseleave', function() {
+      startSlideShow();
+  });
+
+  // Event listeners toevoegen aan de controle labels
+  controls.forEach((control, idx) => {
+      control.addEventListener('click', function() {
+          showSlide(idx);
+          startSlideShow();
+      });
+  });
 });
 
 // Contact Us

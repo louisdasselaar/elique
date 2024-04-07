@@ -373,6 +373,42 @@ header {
     position: relative;
     z-index: 1;
  }
+
+.slideQuoteTop{
+    position: absolute;
+
+    left: -3%;
+    top: -3%;
+
+    height: 20vh;
+    width: 20vh;
+
+    z-index: 100;
+
+    background-image: url(assets/image/pagina4/quote.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.slideQuoteBottom{
+    position: absolute;
+
+    right: -3%;
+    bottom: -3%;
+
+    height: 20vh;
+    width: 20vh;
+
+    z-index: 100;
+
+    background-image: url(assets/image/pagina4/quote.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(180deg);
+}
+
  #overflow {
     width: 100%;
     overflow: hidden;
@@ -409,12 +445,13 @@ header {
  }
 
  .slide_3 .slide-content h4{
-    font-size: 1.2rem;
+    font-size: 1rem;
  }
 
 .slide-content h4{
     font-family: "DM Sans", sans-serif;
     margin-bottom: 4%;
+     font-size: 1rem;
 }
 
 .slide-content p{
@@ -471,14 +508,13 @@ header {
     background: #ccc;
     margin: 0 10px;
  }
- #slide1:checked ~ #bullets label:nth-child(1),
- #slide2:checked ~ #bullets label:nth-child(2),
- #slide3:checked ~ #bullets label:nth-child(3),
- #slide4:checked ~ #bullets label:nth-child(4),
- #slide5:checked ~ #bullets label:nth-child(5) {
+#slide1:checked ~ #bullets label:nth-child(1),
+#slide2:checked ~ #bullets label:nth-child(2),
+#slide3:checked ~ #bullets label:nth-child(3),
+#slide4:checked ~ #bullets label:nth-child(4),
+#slide5:checked ~ #bullets label:nth-child(5) {
     background: #444;
  }
-
 
 /* About Us */
 .aboutUsHeading {

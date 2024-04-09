@@ -201,7 +201,7 @@ header {
 
 .experience-stage, .experience-screen, .experience-party{
     background-size: cover; 
-    background-position: center; 
+    background-position: bottom; 
 }
 
 .experience-stage{
@@ -224,17 +224,21 @@ header {
 
 /* Our services */
 .service {
+    min-height: 70vh;
+
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     height: auto;
-    min-height: 85vh;
+    gap: 5vh;
+
     position: relative;
-    background-image: url('assets/image/main/background-middle.png');
+    background-image: url('assets/image/main/background-middle-spotless.png');
     background-size: cover;
-    background-position: center center;
+    background-position: bottom;
     overflow: hidden;
+    background-repeat: no-repeat;
 }
 
 .service::before {
@@ -256,7 +260,6 @@ header {
 
 .serviceHeading {
     text-align: center;
-    margin: 5%;
 }
 
 .serviceHeading h2{
@@ -324,7 +327,7 @@ header {
 
 /* Testimonials */
 .testimonials{
-    height: 50vh;
+    height: 55vh;
 
     display: flex;
     flex-direction: column;
@@ -523,7 +526,8 @@ header {
 
     background-image: url('assets/image/main/background-bottom.png');
     background-size: cover;
-    background-position: center;
+    background-position: top;
+    background-repeat: no-repeat;
 
     display: flex;
     align-items: center;
@@ -558,7 +562,7 @@ header {
 }
 
 .aboutUsTekst{
-    width: 90%;
+    width: 85%;
     text-align: center;
     
     font-size: 1.2rem;
@@ -597,13 +601,14 @@ header {
 
 .contactUsContainer{
     position: absolute;
-    bottom: 0%;
+    height: 49vh;
     width: 100%;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10%;
+    gap: 5%;
 }
 
 .contactImage{
@@ -615,12 +620,18 @@ header {
     background-size: cover;
 }
 
+.contactinfo{
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+
 .contactEmma{
-    text-align: right;
+    text-align: center;
 }
 
 .contactAngelique{
-    text-align: left;
+    text-align: center;
 }
 
 .contactInfo{

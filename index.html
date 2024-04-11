@@ -211,30 +211,30 @@
         </div>
       </div>
       <div class="contactUsContainer">
-        <div id="contact" class="contactUsHeading"  onclick="openEmailPopup()">
-          <div class="contactUsHeadingContainer">
-            <h3>Let's work together</h3>
-            <h2>CONTACT US!</h2>
-          </div>
-        </div>
-              
-        <div class="contactinfo">
-          <div class="contactEmma">
-            <div class="contact">
-              <h5>Emma Zlotnik</h5>
-              <p>Email: emma@elique-events.com</p>
-              <p>Mob: +31 (0) 6 100 81 726</p>
+        <div class="contactUsHeadingInfoContainer">
+          <div id="contact" class="contactUsHeading"  onclick="openEmailPopup()">
+            <div class="contactUsHeadingContainer">
+              <h3>Let's work together</h3>
+              <h2>CONTACT US!</h2>
             </div>
           </div>
-          <div class="contactAngelique">
-            <div class="contact">
-              <h5>Angelique van Effrink</h5>
-              <p>E: angelique@elique-events.com</p>
-              <p>Mob: +31 (0) 6 227 52 306</p>
-            </div>
+          <div class="contactGegevens">
+            <p>Phone: +31 (0)6 10 08 17 26</p>
+            <p>Email: info@elique-events.com</p>
           </div>
         </div>
-        <!-- <div class="contactImage"></div>       -->
+        
+      
+        <div class="formContainer">
+          <form action="https://api.web3forms.com/submit" method="POST" class="formInput">
+              <input type="hidden" name="access_key" value="9ab2bd74-745c-4472-b9c5-9c91062ae529">
+
+              <input type="text" name="name" placeholder="Name" class="contactInput" required>
+              <input type="email" name="email" placeholder="Email" class="contactInput" required>
+              <textarea name="message" placeholder="Message" class="contactInputMsg" required></textarea>
+              <button type="submit" class="submitButton">Send</button>
+          </form>
+        </div>
       </div>
     </div>
 

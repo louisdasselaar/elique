@@ -572,11 +572,16 @@ header {
     font-family: "DM Sans", sans-serif;
 }
 
-.contactUsHeading{
-    width: 100%;
 
+/* Contact Us */
+.contactUsHeading{
     display: flex;
     justify-content: center;
+}
+
+.contactUsHeadingInfoContainer{
+    display: flex;
+    flex-direction: column;
 }
 
 .contactUsHeadingContainer{
@@ -605,48 +610,79 @@ header {
     width: 100%;
 
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5%;
+    gap: 20%;
 }
 
-.contactImage{
-    height: 30vh;
-    width: 40vh;
-
-    background-image: url('assets/image/pagina6/founders.png');
-    background-position: center;
-    background-size: cover;
+.contactGegevens p{
+    margin: 0;
+    padding-left: 10%;
 }
 
-.contactinfo{
+.formContainer {
+    height: 49vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formInput {
     display: flex;
     flex-direction: column;
-    gap: 3vh;
+    align-items: start;
+    gap: 20px;
+    color: white; 
 }
 
-.contactEmma{
-    text-align: center;
+.contactInput, .contactInputMsg {
+    width: 400px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    font-weight: 500;
+    color: white;
+    background-color: transparent;
+    padding-left: 10px; 
 }
 
-.contactAngelique{
-    text-align: center;
+.contactInput::placeholder, .contactInputMsg::placeholder {
+    color: white; 
+    opacity: 1; 
 }
 
-.contactInfo{
-    width: 80%;
+.contactInput:focus, .contactInputMsg:focus {
+    outline: none;
+    border-bottom-color: #1e1b1b; 
 }
 
-.contact h5{
-    margin: 0;
-    font-family: "DM Sans", sans-serif;
+.contactInputMsg {
+    padding-top: 15px;
+    height: 120px; 
+    padding-left: 10px; 
 }
 
-.contact p{
-    margin: 0;
-    font-family: "DM Sans", sans-serif;
-} 
+.submitButton {
+    padding: 10px 20px;
+    background-color: #292527; 
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    border-radius: 25px; 
+}
+
+.submitButton:hover {
+    background-color: darken(#1e1b1b, 10%); 
+    transform: scale(1.05); 
+}
+
+.submitButton:focus {
+    outline: 2px solid #1e1b1b; 
+}
+
+.submitButton:active {
+    background-color: #333;
+}
 
 /* Footer */
 .footerpage{

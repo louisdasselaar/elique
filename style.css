@@ -574,14 +574,28 @@ header {
 
 
 /* Contact Us */
+.contactUsContainer{
+    position: absolute;
+    height: 49vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20%;
+}
+
 .contactUsHeading{
     display: flex;
     justify-content: center;
+
+    margin-top: 6vh;
 }
 
 .contactUsHeadingInfoContainer{
     display: flex;
     flex-direction: column;
+    gap: 5px;
 }
 
 .contactUsHeadingContainer{
@@ -593,31 +607,23 @@ header {
 }
 
 .contactUsHeading h3{
-    text-align: center;
+    text-align: left;
     font-size: 2.5rem;
     margin: 0;
 }
 
 .contactUsHeading h2{
     font-size: 3rem;
-    text-align: center;
+    text-align: left;
     font-weight: bold;
 }
 
-.contactUsContainer{
-    position: absolute;
-    height: 49vh;
-    width: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20%;
+.contactGegevens p{
+    margin-top: 5px;
 }
 
-.contactGegevens p{
-    margin: 0;
-    padding-left: 10%;
+.contactGegevensIcon{
+    margin-right: 3px;
 }
 
 .formContainer {

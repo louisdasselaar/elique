@@ -145,22 +145,20 @@ header {
 }
 
 /* Experience */
-.experience{
+.experience {
     height: 50vh;
     position: relative;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 40px;
-    
     background-image: url('assets/image/main/background-top.png');
     background-position: center;
-    background-size: cover; 
- }
+    background-size: cover;
+}
 
- .experience::before {
+.experience::before {
     content: "";
     position: absolute;
     top: 0;
@@ -169,58 +167,60 @@ header {
     height: 100%;
     background: inherit;
     filter: brightness(50%);
-    z-index: 0; 
+    z-index: 0;
 }
- 
-.experienceHeading{
+
+.experienceHeading {
     width: 100%;
     z-index: 1;
 }
 
-.experienceHeading h2{
+.experienceHeading h2 {
     font-size: 2rem;
     margin: 0;
     text-align: center;
     font-weight: bold;
 }
 
-.experienceContainer{
+.experienceContainer {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 100px;
-
-    z-index: 1;
+    gap: 10vh;
+    z-index: 2; 
 }
 
-.experienceContainer div{
+.experienceContainer div {
     width: 30vh;
     height: 30vh;
 }
 
-.experience-stage, .experience-screen, .experience-party{
-    background-size: cover; 
-    background-position: bottom; 
+.experience-stage,
+.experience-screen,
+.experience-party {
+    background-size: cover;
+    background-position: center; /* Aangepast naar center voor betere positionering */
 }
 
-.experience-stage{
-    background-image: url(assets/image/pagina2/page2_stage.png);
+.experience-stage {
+    background-image: url('assets/image/pagina2/page2_stage.png');
 }
 
-.experience-party{
-    background-image: url(assets/image/pagina2/page2_party.png);
+.experience-party {
+    background-image: url('assets/image/pagina2/page2_party.png');
 }
 
-.experience-screen{
-    background-image: url(assets/image/pagina2/page2_screens.png);
-} 
+.experience-screen {
+    background-image: url('assets/image/pagina2/page2_screens.png');
+}
 
-.experience h3{
+.experience h3 {
     font-size: 2.5rem;
-    margin: 1.5rem 12.5% 0; 
+    margin: 1.5rem 12.5% 0;
     text-align: center;
 }
+
 
 /* Our services */
 .service {
@@ -730,21 +730,9 @@ header {
     }
 
     /* Experience */
-    .experienceContainer div{
-        width: 280px;
-        height: 350px;
-        margin: 15px;
+    .experienceContainer {
+        gap: 4vh; 
     }
-
-    .experience h2{
-        font-size: 2rem;
-    }
-
-    .experience h3{
-        font-size: 1.7rem;
-        margin: 1.5rem 5% 0; 
-    }
-
     /* Services */
     .serviceContainer {
         align-items: center;
@@ -755,7 +743,7 @@ header {
     }
 }
 
-@media(max-width: 576px) {
+@media(max-width: 768px) {
     /* Navbar */
     .dropDownMenu{
         left: 2rem;
@@ -773,18 +761,57 @@ header {
     }
 
     /* Experience */
-    .experienceContainer div{
-        width: 160px;
-        height: 200px;
-        margin: 5px;
+    .experienceHeading h2 {
+        font-size: 1.5rem;
+    }
+    
+    .experienceContainer div {
+        width: 25vh; 
+        height: 25vh;
+    }
+}
+
+@media(max-width: 768px) {
+    /* Navbar */
+    .dropDownMenu{
+        left: 2rem;
+        width: unset;
+        top: 70px;
     }
 
-    .experience h2{
+    .homeContent h1{
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .homeContent h2{
         font-size: 1.5rem;
     }
 
-    .experience h3{
-        font-size: 1rem;
-        margin: 1.5rem 2.5% 0; 
+    /* Experience */
+    .experienceHeading h2 {
+        font-size: 1.5rem;
+    }
+    
+    .experienceContainer div {
+        width: 25vh; 
+        height: 25vh;
     }
 }
+
+@media(max-width: 480px) {
+    /* Experience */
+    .experienceHeading h2 {
+        font-size: 1.5rem;
+    }
+
+    .experienceContainer {
+        gap: 2vh;
+    }
+    
+    .experienceContainer div {
+        width: 18vh; 
+        height: 18vh;
+    }
+}
+

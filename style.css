@@ -835,6 +835,10 @@ header {
     .slide-content.slide-content-long h4 {
         font-size: 0.9rem;  
     }
+
+    .slide-content p {
+        font-size: 0.9rem;
+    }
     
     .slideQuoteTop {
         height: 15vh;
@@ -867,35 +871,39 @@ header {
     /* Testimonial */
     .testimonialsHeading h2 {
         font-size: 2.5rem;
-        color: green;
+        color: red;
     }
 
     #slider {
-        width: 85%; /* maakt de slider breder op kleinere schermen */
+        width: 75%; /* maakt de slider breder op kleinere schermen */
     }
 
     .slide-content h4 {
-        font-size: 1rem;
+        font-size: 0.7rem;
     }
 
     .slide-content.slide-content-long h4 {
-        font-size: 0.9rem;  
+        font-size: 0.6rem;  
+    }
+
+    .slide-content p {
+        font-size: 0.6rem;
     }
     
     .slideQuoteTop {
         height: 15vh;
         width: 15vh;
 
-        left: -5%;
-        top: -5%;  
+        left: -10%;
+        top: 5%;  
     }
     
     .slideQuoteBottom {
         height: 15vh;
         width: 15vh;
 
-        right: -5%;
-        bottom: -5%; 
+        right: -10%;
+        bottom: 5%; 
     }
 }
 

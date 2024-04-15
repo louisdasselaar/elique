@@ -217,8 +217,6 @@ header {
     text-align: center;
 }
 
-
-
 /* Our services */
 .service {
     min-height: 70vh;
@@ -260,6 +258,7 @@ header {
 }
 
 .serviceHeading h2{
+    margin-top: 50px; /* Voeg ruimte toe aan de top om niet tegen de header te plakken */
     font-size: 3rem;
     font-weight: bold;
 }
@@ -314,14 +313,13 @@ header {
     font-family: "DM Sans", sans-serif;
 }
 
-.align-left {
+.serviceHeroScreen, .serviceHeroVideo{
     text-align: left;
 }
 
-.align-right {
+.serviceHeroEvent, .serviceHeroComputers{
     text-align: right;
 }
-
 /* Testimonials */
 .testimonials{
     height: 50vh;
@@ -723,12 +721,30 @@ header {
     }
 
     .homeContent h2{
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     /* Experience */
     .experienceContainer {
         gap: 4vh; 
+    }
+
+    /* Our Services */
+    .serviceHeading h2{
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+    .serviceHeading h3{
+        font-size: 1.8rem;
+    }
+
+    .serviceHeroVideo{
+        text-align: right;
+    }
+    
+    .serviceHeroEvent{
+        text-align: left;
     }
 }
 
@@ -759,17 +775,28 @@ header {
         width: 40vh; /* Grotere breedte voor betere visuele balans */
     }
 
-    .experienceHeading h2 {
+    .experienceHeading h3 {
         font-size: 1.5rem;
     }
+
+    /* Our Services */
+    .serviceHeading h2{
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+    .serviceHeading h3{
+        font-size: 1.5rem;
+    }
+
+    .serviceHero{
+        text-align: center;
+    }
+
 }
 
 @media(max-width: 480px) {
     /* Experience */
-    .experienceHeading h2 {
-        font-size: 1.5rem;
-    }
-
     .experienceContainer {
         gap: 2vh;
     }

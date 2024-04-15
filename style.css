@@ -183,7 +183,8 @@ header {
 }
 
 .experienceContainer {
-    width: 100%;
+    width: calc(100% - 40px); /* Aangepast om padding te behouden */
+    padding: 20px; /* Nieuwe padding om ruimte aan de zijkanten te behouden */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -192,15 +193,10 @@ header {
 }
 
 .experienceContainer div {
-    width: 30vh;
-    height: 30vh;
-}
-
-.experience-stage,
-.experience-screen,
-.experience-party {
+    width: 30vh; /* Behoud van vierkante vorm door breedte */
+    aspect-ratio: 1 / 1; /* Zorgt ervoor dat hoogte gelijk is aan breedte */
     background-size: cover;
-    background-position: center; /* Aangepast naar center voor betere positionering */
+    background-position: center;
 }
 
 .experience-stage {
@@ -220,6 +216,7 @@ header {
     margin: 1.5rem 12.5% 0;
     text-align: center;
 }
+
 
 
 /* Our services */
@@ -733,14 +730,6 @@ header {
     .experienceContainer {
         gap: 4vh; 
     }
-    /* Services */
-    .serviceContainer {
-        align-items: center;
-      }
-
-    .serviceHero{
-        margin-bottom: 8%;
-    }
 }
 
 @media(max-width: 768px) {
@@ -761,41 +750,17 @@ header {
     }
 
     /* Experience */
+    .experienceContainer {
+        width: calc(100% - 20px); /* Aangepaste padding voor kleinere schermen */
+        padding: 10px;
+    }
+
+    .experienceContainer div {
+        width: 40vh; /* Grotere breedte voor betere visuele balans */
+    }
+
     .experienceHeading h2 {
         font-size: 1.5rem;
-    }
-    
-    .experienceContainer div {
-        width: 25vh; 
-        height: 25vh;
-    }
-}
-
-@media(max-width: 768px) {
-    /* Navbar */
-    .dropDownMenu{
-        left: 2rem;
-        width: unset;
-        top: 70px;
-    }
-
-    .homeContent h1{
-        font-size: 2rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .homeContent h2{
-        font-size: 1.5rem;
-    }
-
-    /* Experience */
-    .experienceHeading h2 {
-        font-size: 1.5rem;
-    }
-    
-    .experienceContainer div {
-        width: 25vh; 
-        height: 25vh;
     }
 }
 

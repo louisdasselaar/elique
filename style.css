@@ -375,8 +375,8 @@ header {
 .slideQuoteTop{
     position: absolute;
 
-    left: -3%;
-    top: -3%;
+    left: -5%;
+    top: -10%;
 
     height: 20vh;
     width: 20vh;
@@ -392,8 +392,8 @@ header {
 .slideQuoteBottom{
     position: absolute;
 
-    right: -3%;
-    bottom: -3%;
+    right: -5%;
+    bottom: -10%;
 
     height: 20vh;
     width: 20vh;
@@ -449,7 +449,7 @@ header {
 .slide-content h4{
     font-family: "DM Sans", sans-serif;
     margin-bottom: 4%;
-     font-size: 1rem;
+    font-size: 1rem;
 }
 
 .slide-content p{
@@ -746,6 +746,40 @@ header {
     .serviceHeroEvent{
         text-align: left;
     }
+
+    /* Testimonial */
+    .testimonialsHeading h2 {
+        font-size: 2.5rem;
+        color: blue;
+    }
+
+    #slider {
+        width: 80%; /* maakt de slider breder op kleinere schermen */
+    }
+
+    .slide-content h4 {
+        font-size: 1rem;
+    }
+
+    .slide-content p {
+        font-size: 0.8rem;
+    }
+
+    .slideQuoteTop {
+        height: 17vh;
+        width: 17vh;
+
+        left: -7%;
+        top: -13%;  
+    }
+    
+    .slideQuoteBottom {
+        height: 17vh;
+        width: 17vh;
+
+        right: -7%;
+        bottom: -13%; 
+    }
 }
 
 @media(max-width: 768px) {
@@ -780,19 +814,43 @@ header {
     }
 
     /* Our Services */
-    .serviceHeading h2{
-        font-size: 2.5rem;
-        font-weight: bold;
-    }
-
-    .serviceHeading h3{
-        font-size: 1.5rem;
-    }
-
     .serviceHero{
         text-align: center;
     }
 
+    /* Testimonial */
+    .testimonialsHeading h2 {
+        font-size: 2.5rem;
+        color: green;
+    }
+
+    #slider {
+        width: 85%; /* maakt de slider breder op kleinere schermen */
+    }
+
+    .slide-content h4 {
+        font-size: 1rem;
+    }
+
+    .slide-content.slide-content-long h4 {
+        font-size: 0.9rem;  
+    }
+    
+    .slideQuoteTop {
+        height: 15vh;
+        width: 15vh;
+
+        left: -5%;
+        top: -5%;  
+    }
+    
+    .slideQuoteBottom {
+        height: 15vh;
+        width: 15vh;
+
+        right: -5%;
+        bottom: -5%; 
+    }
 }
 
 @media(max-width: 480px) {
@@ -804,6 +862,40 @@ header {
     .experienceContainer div {
         width: 18vh; 
         height: 18vh;
+    }
+
+    /* Testimonial */
+    .testimonialsHeading h2 {
+        font-size: 2.5rem;
+        color: green;
+    }
+
+    #slider {
+        width: 85%; /* maakt de slider breder op kleinere schermen */
+    }
+
+    .slide-content h4 {
+        font-size: 1rem;
+    }
+
+    .slide-content.slide-content-long h4 {
+        font-size: 0.9rem;  
+    }
+    
+    .slideQuoteTop {
+        height: 15vh;
+        width: 15vh;
+
+        left: -5%;
+        top: -5%;  
+    }
+    
+    .slideQuoteBottom {
+        height: 15vh;
+        width: 15vh;
+
+        right: -5%;
+        bottom: -5%; 
     }
 }
 

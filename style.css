@@ -574,13 +574,30 @@ header {
 /* Contact Us */
 .contactUsContainer{
     position: absolute;
+
     height: 49vh;
-    width: 100%;
+    width: 90%;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.contactContainer, .formContainer {
+    width: 45%; 
+    margin: 10px; 
+}
+
+.contactInput, .contactInputMsg {
+    width: 100%; 
+    max-width: 400px; 
+}
+
+.contactContainer{
+    height: 45vh;
 
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    gap: 20%;
 }
 
 .contactUsHeading{
@@ -593,6 +610,7 @@ header {
 .contactUsHeadingInfoContainer{
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 5px;
 }
 
@@ -625,7 +643,7 @@ header {
 }
 
 .formContainer {
-    height: 49vh;
+    height: 45vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -753,11 +771,11 @@ header {
     /* Testimonial */
     .testimonialsHeading h2 {
         font-size: 2.5rem;
-        color: blue;
+        /* color: blue; */
     }
 
     #slider {
-        width: 80%; /* maakt de slider breder op kleinere schermen */
+        width: 80%;
     }
 
     .slide-content h4 {
@@ -784,15 +802,33 @@ header {
         bottom: -13%; 
     }
 
-    /* AboutUs*/
+    /* AboutUs */
     .aboutUsHeading h2{
         font-size: 2.5rem;
-        color: blue;
+        /* color: blue; */
     }
     
     .aboutUsTekst{
         width: 85%;
         font-size: 1rem;
+    }
+
+    /* Contact Us */
+    .contactUsHeading h3{
+        font-size: 2rem;
+    }
+    
+    .contactUsHeading h2{
+        font-size: 2.5rem;
+        /* color: blue; */
+    }
+
+    .contactInput, .contactInputMsg {
+        width: 350px;
+    }
+    
+    .contactInputMsg {
+        height: 100px; 
     }
 }
 
@@ -828,11 +864,6 @@ header {
     }
 
     /* Our Services */
-    .serviceHeading h2{
-        font-size: 2.5rem;
-        font-weight: bold;
-    }
-
     .serviceHeading h3{
         font-size: 1.5rem;
     }
@@ -842,9 +873,9 @@ header {
     }
 
     /* Testimonial */
-    .testimonialsHeading h2 {
+    /* .testimonialsHeading h2 {
         color: green;
-    }
+    } */
 
     #slider {
         width: 85%; /* maakt de slider breder op kleinere schermen */
@@ -879,12 +910,53 @@ header {
     }
 
     /* AboutUs */
-    .aboutUsHeading h2{
+    /* .aboutUsHeading h2{
         color: green;
-    }
+    } */
     
     .aboutUsTekst{
         font-size: 1rem;
+    }
+
+    /* ContactUs */
+    .aboutUsBackground{
+        height: 100vh;
+    }
+
+    .contactUsContainer{
+    
+        height: 70vh;
+        width: 100%;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contactUsHeadingInfoContainer{
+        align-items: center;
+    }
+
+    .contactContainer{
+        width: 70%;
+    }
+
+    .contactUsHeading h3{
+        font-size: 2rem;
+    }
+    
+    .contactUsHeading h2{
+        font-size: 2.5rem;
+        /* color: green; */
+    }
+
+    .contactInput, .contactInputMsg {
+        width: 350px;
+    }
+    
+    .contactInputMsg {
+        height: 100px; 
     }
 }
 
@@ -894,21 +966,16 @@ header {
         gap: 2vh;
     }
     
-    .experienceContainer div {
-        width: 18vh; 
-        height: 18vh;
-    }
-
     /* Our Services */
     .serviceHeading h2{
         font-size: 2rem;
-        color: red;
+        /* color: red; */
     }
 
     /* Testimonial */
     .testimonialsHeading h2 {
         font-size: 2rem;
-        color: red;
+        /* color: red; */
     }
 
     #slider {
@@ -944,12 +1011,24 @@ header {
     }
 
     /* AboutUs */
-    .aboutUsHeading h2{
+    /* .aboutUsHeading h2{
         color: red;
-    }
+    } */
     
     .aboutUsTekst{
         font-size: 0.8rem;
+    }
+
+    /* ContactUs */
+    .contactUsHeading h3{
+        /* font-size: 1.5rem; */
+        text-align: center;
+    }
+    
+    .contactUsHeading h2{
+        /* font-size: 2rem;
+        color: red; */
+        text-align: center;
     }
 }
 

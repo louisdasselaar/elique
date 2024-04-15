@@ -8,6 +8,11 @@
     font-weight: 500;
 }
 
+body, html {
+    overflow-x: hidden;
+}
+
+
 /* Header */
 header {
     position: fixed;
@@ -776,6 +781,10 @@ header {
 
     #slider {
         width: 80%;
+    }
+
+    #label{
+
     }
 
     .slide-content h4 {

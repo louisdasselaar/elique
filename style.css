@@ -554,12 +554,15 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    background-image: url('assets/image/pagina6/banner.png');
+    background-position: center;
+    background-size: 100% 100%;
 }
 
 .aboutUsTekst{
     width: 85%;
     text-align: center;
-    
     font-size: 1.2rem;
 }
 
@@ -780,6 +783,17 @@ header {
         right: -7%;
         bottom: -13%; 
     }
+
+    /* AboutUs*/
+    .aboutUsHeading h2{
+        font-size: 2.5rem;
+        color: blue;
+    }
+    
+    .aboutUsTekst{
+        width: 85%;
+        font-size: 1rem;
+    }
 }
 
 @media(max-width: 768px) {
@@ -814,13 +828,21 @@ header {
     }
 
     /* Our Services */
+    .serviceHeading h2{
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+    .serviceHeading h3{
+        font-size: 1.5rem;
+    }
+
     .serviceHero{
         text-align: center;
     }
 
     /* Testimonial */
     .testimonialsHeading h2 {
-        font-size: 2.5rem;
         color: green;
     }
 
@@ -855,6 +877,15 @@ header {
         right: -5%;
         bottom: -5%; 
     }
+
+    /* AboutUs */
+    .aboutUsHeading h2{
+        color: green;
+    }
+    
+    .aboutUsTekst{
+        font-size: 1rem;
+    }
 }
 
 @media(max-width: 480px) {
@@ -868,9 +899,15 @@ header {
         height: 18vh;
     }
 
+    /* Our Services */
+    .serviceHeading h2{
+        font-size: 2rem;
+        color: red;
+    }
+
     /* Testimonial */
     .testimonialsHeading h2 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         color: red;
     }
 
@@ -904,6 +941,15 @@ header {
 
         right: -10%;
         bottom: 5%; 
+    }
+
+    /* AboutUs */
+    .aboutUsHeading h2{
+        color: red;
+    }
+    
+    .aboutUsTekst{
+        font-size: 0.8rem;
     }
 }
 

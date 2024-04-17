@@ -742,30 +742,12 @@ header {
         z-index: 100;
     }
 
-    .homeContent h1{
-        font-size: 3rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .homeContent h2{
-        font-size: 2.5rem;
-    }
-
     /* Experience */
     .experienceContainer {
         gap: 4vh; 
     }
 
     /* Our Services */
-    .serviceHeading h2{
-        font-size: 2.5rem;
-        font-weight: bold;
-    }
-
-    .serviceHeading h3{
-        font-size: 1.8rem;
-    }
-
     .serviceHeroVideo{
         text-align: right;
     }
@@ -775,21 +757,8 @@ header {
     }
 
     /* Testimonial */
-    .testimonialsHeading h2 {
-        font-size: 2.5rem;
-        /* color: blue; */
-    }
-
     #slider {
         width: 80%;
-    }
-
-    #label{
-
-    }
-
-    .slide-content h4 {
-        font-size: 1rem;
     }
 
     .slide-content p {
@@ -813,26 +782,13 @@ header {
     }
 
     /* AboutUs */
-    .aboutUsHeading h2{
-        font-size: 2.5rem;
-        /* color: blue; */
-    }
     
     .aboutUsTekst{
         width: 85%;
-        font-size: 1rem;
+        /* font-size: 1rem; */
     }
 
     /* Contact Us */
-    .contactUsHeading h3{
-        font-size: 2rem;
-    }
-    
-    .contactUsHeading h2{
-        font-size: 2.5rem;
-        /* color: blue; */
-    }
-
     .contactInput, .contactInputMsg {
         width: 350px;
     }
@@ -850,15 +806,6 @@ header {
         top: 70px;
     }
 
-    .homeContent h1{
-        font-size: 2rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .homeContent h2{
-        font-size: 1.5rem;
-    }
-
     /* Experience */
     .experienceContainer {
         width: calc(100% - 20px); /* Aangepaste padding voor kleinere schermen */
@@ -874,18 +821,9 @@ header {
     }
 
     /* Our Services */
-    .serviceHeading h3{
-        font-size: 1.5rem;
-    }
-
     .serviceHero{
         text-align: center;
     }
-
-    /* Testimonial */
-    /* .testimonialsHeading h2 {
-        color: green;
-    } */
 
     #slider {
         width: 85%; /* maakt de slider breder op kleinere schermen */
@@ -919,15 +857,6 @@ header {
         bottom: -5%; 
     }
 
-    /* AboutUs */
-    /* .aboutUsHeading h2{
-        color: green;
-    } */
-    
-    .aboutUsTekst{
-        font-size: 1rem;
-    }
-
     /* ContactUs */
     .aboutUsBackground{
         height: 100vh;
@@ -952,15 +881,6 @@ header {
         width: 70%;
     }
 
-    .contactUsHeading h3{
-        font-size: 1.2rem;
-    }
-    
-    .contactUsHeading h2{
-        font-size: 1.5rem;
-        /* color: green; */
-    }
-
     .contactInput, .contactInputMsg {
         width: 350px;
     }
@@ -977,17 +897,9 @@ header {
     }
     
     /* Our Services */
-    .serviceHeading h2{
-        font-size: 2rem;
-        /* color: red; */
-    }
+
 
     /* Testimonial */
-    .testimonialsHeading h2 {
-        font-size: 2rem;
-        /* color: red; */
-    }
-
     #slider {
         width: 75%; /* maakt de slider breder op kleinere schermen */
     }
@@ -1020,24 +932,17 @@ header {
         bottom: 5%; 
     }
 
-    /* AboutUs */
-    /* .aboutUsHeading h2{
-        color: red;
-    } */
-    
+    /* AboutUs */ 
     .aboutUsTekst{
         font-size: 0.8rem;
     }
 
     /* ContactUs */
     .contactUsHeading h3{
-        /* font-size: 1.5rem; */
         text-align: center;
     }
     
     .contactUsHeading h2{
-        /* font-size: 2rem;
-        color: red; */
         text-align: center;
     }
 }

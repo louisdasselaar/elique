@@ -313,7 +313,7 @@ header {
     font-weight: bold;
 }
 
-.serviceHeroText{
+.serviceHeroText p{
     font-family: "DM Sans", sans-serif;
 }
 
@@ -550,7 +550,7 @@ header {
 }
 
 .aboutUsContainer{
-    height: 26vh;
+    height: 25vh;
 
     position: relative;
 
@@ -891,15 +891,40 @@ header {
 }
 
 @media(max-width: 480px) {
+    /* Homecontent */
+    .homeContent h1{
+        font-size: 1.3rem;
+        margin-bottom: 3%;
+        font-weight: bold;
+    }
+    
+    .homeContent h2{
+        font-size: 1rem;
+    }    
+
     /* Experience */
+    .experienceHeading h2{
+        font-size: 1rem;
+    }
     .experienceContainer {
         gap: 2vh;
     }
     
     /* Our Services */
-
+    .serviceHeading h2{
+        font-size: 1.3rem;
+    }
+    
+    .serviceHeading h3{
+        font-size: 1rem;
+    }
 
     /* Testimonial */
+    .testimonialsHeading h2 {
+        font-size: 1.3rem;
+        /* color: red; */
+    }
+
     #slider {
         width: 75%; /* maakt de slider breder op kleinere schermen */
     }
@@ -932,18 +957,42 @@ header {
         bottom: 5%; 
     }
 
-    /* AboutUs */ 
-    .aboutUsTekst{
-        font-size: 0.8rem;
-    }
-
-    /* ContactUs */
-    .contactUsHeading h3{
-        text-align: center;
+    /* AboutUs */
+    .aboutUsHeading h2{
+        font-size: 1.3rem;
     }
     
-    .contactUsHeading h2{
-        text-align: center;
+    .aboutUsBackground{
+        height: 150vh;
+        width: 100%;
+    
+        position: relative;
+    
+        background-image: url('assets/image/pagina6/officebackground.png');
+        background-position: center;
+        background-size: cover;
+    }
+
+    .aboutUsContainer{
+        height: 35vh;
+    }
+
+    .aboutUsTekst p{
+        font-size: 0.8rem;
+    }
+        
+    /* ContactUs */
+    .contactUsContainer{
+        height: 115vh;
+        width: 100%;
+        margin-top: 0;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        gap: 20px;
     }
 }
 

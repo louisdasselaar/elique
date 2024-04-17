@@ -911,11 +911,19 @@ header {
     }
     
     /* Our Services */
+    .serviceHeading{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     .serviceHeading h2{
         font-size: 1.3rem;
     }
     
     .serviceHeading h3{
+        width: 80%;
         font-size: 1rem;
     }
 
@@ -963,7 +971,7 @@ header {
     }
     
     .aboutUsBackground{
-        height: 150vh;
+        height: 135vh;
         width: 100%;
     
         position: relative;
@@ -983,7 +991,7 @@ header {
         
     /* ContactUs */
     .contactUsContainer{
-        height: 115vh;
+        height: 100vh;
         width: 100%;
         margin-top: 0;
 
@@ -995,4 +1003,3 @@ header {
         gap: 20px;
     }
 }
-

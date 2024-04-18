@@ -256,10 +256,9 @@ header {
 }
 
 .serviceHeading h2{
-    margin-top: 50px; /* Voeg ruimte toe aan de top om niet tegen de header te plakken */
+    margin-top: 50px;
     font-size: 1.5rem;
     font-weight: bold;
-    color: red;
 }
 
 .serviceHeading h3{
@@ -729,10 +728,6 @@ header {
 
 /* Responsive design */
 @media(max-width: 1400px) {
-    .serviceHeading h2{
-        color: green;
-    }
-
     .serviceHero{
         width: 250px;
         margin: 25px 10px;
@@ -785,6 +780,19 @@ header {
     }
 
     /* Our Services */
+    .serviceHero{
+        width: 300px;
+        margin: 25px 25px;
+    }
+    
+    .serviceHeroImg{
+        height: 200px;
+    }
+    
+    .serviceHeroVid {
+        height: 200px;
+    }
+
     .serviceHeroVideo{
         text-align: right;
     }

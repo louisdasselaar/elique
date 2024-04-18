@@ -91,3 +91,32 @@ function openEmailPopup() {
       window.location.href = "mailto:info@elique-events.com";
     }
   }
+
+//Email form 
+document.addEventListener("DOMContentLoaded", function() {
+  // Dit matcht schermformaten tot 480 pixels breed
+  var smallScreenMediaQuery = window.matchMedia("(max-width: 480px)");
+
+  smallScreenMediaQuery.addListener(handleMediaQueryChange); // Luister naar wijzigingen in de viewport
+  handleMediaQueryChange(smallScreenMediaQuery); // Voer initieel uit
+
+  function handleMediaQueryChange(mediaQuery) {
+      if (mediaQuery.matches) {
+          // Voeg focus event listeners toe
+          document.querySelectorAll('input, textarea').forEach(element => {
+              element.addEventListener('focus', scrollIntoView);
+          });
+      } else {
+          // Verwijder focus event listeners
+          document.querySelectorAll('input, textarea').forEach(element => {
+              element.removeEventListener('focus', scrollIntoView);
+          });
+      }
+  }
+
+  function scrollIntoView(event) {
+      setTimeout(() => {
+          event.target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100); // Vertraging om tijd te geven aan het toetsenbord om te verschijnen
+  }
+});

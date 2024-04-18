@@ -971,10 +971,13 @@ header {
         font-size: 1rem;
     }
 
+    .serviceHero{
+        text-align: center;
+    }
+
     /* Testimonial */
     .testimonialsHeading h2 {
         font-size: 1.3rem;
-        /* color: red; */
     }
 
     #slider {

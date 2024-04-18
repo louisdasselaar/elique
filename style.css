@@ -204,7 +204,7 @@ header {
 }
 
 .experience-stage {
-    background-image: url('assets/image/pagina2/page2_stage.png');
+    background-image: url('assets/svg/experience/stage.svg');
 }
 
 .experience-party {
@@ -544,7 +544,7 @@ header {
 
     position: relative;
 
-    background-image: url('assets/image/pagina6/officebackground.png');
+    background-image: url('assets/svg/contactUs/contactUsBackground.svg');
     background-position: center;
     background-size: cover;
 }
@@ -971,12 +971,12 @@ header {
     }
     
     .aboutUsBackground{
-        height: 135vh;
+        height: 150vh;
         width: 100%;
     
         position: relative;
     
-        background-image: url('assets/image/pagina6/officebackground.png');
+        background-image: url('assets/svg/contactUs/contactUsBackground.svg');
         background-position: center;
         background-size: cover;
     }
@@ -999,7 +999,5 @@ header {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
-        gap: 20px;
     }
 }

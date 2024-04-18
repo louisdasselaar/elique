@@ -728,6 +728,10 @@ header {
 
 /* Responsive design */
 @media(max-width: 1400px) {
+    .service{
+        min-height: 60vh;
+    }
+
     .serviceHero{
         width: 250px;
         margin: 25px 10px;
@@ -780,6 +784,10 @@ header {
     }
 
     /* Our Services */
+    .service{
+        min-height: 70vh;
+    }
+
     .serviceHero{
         width: 300px;
         margin: 25px 25px;
@@ -866,7 +874,7 @@ header {
 
     /* Our Services */
     .serviceHero{
-        /* text-align: center; */
+        text-align: center;
     }
 
     #slider {
@@ -969,10 +977,6 @@ header {
     .serviceHeading h3{
         width: 80%;
         font-size: 1rem;
-    }
-
-    .serviceHero{
-        text-align: center;
     }
 
     /* Testimonial */

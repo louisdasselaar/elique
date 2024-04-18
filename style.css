@@ -727,7 +727,7 @@ header {
 }
 
 /* Responsive design */
-@media(max-width: 1199px) {
+@media(max-width: 1400x) {
     .serviceHero{
         width: 250px;
         margin: 25px 10px;

@@ -89,7 +89,7 @@ header {
     top: 60px;
     width: 300px;
     height: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.3);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-radius: 10px;
@@ -716,6 +716,26 @@ header {
     background-color: #333;
 }
 
+/* Nieuwe stijlen voor het uitschakelen van automatisch invullen */
+/* Chrome, Safari en Edge specifieke pseudo-selector voor een transparante achtergrond bij automatisch invullen */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px rgba(0, 0, 0, 0) inset !important; /* semi-transparant wit */
+    -webkit-text-fill-color: rgb(0, 0, 0) !important;
+}
+
+/* Firefox specifieke pseudo-selector voor het uitschakelen van de standaard styling */
+input:-moz-ui-invalid {
+    box-shadow: none !important;
+}
+
+input:focus, textarea:focus {
+    outline: none !important;
+    border-bottom: 2px solid #1e1b1b !important;
+}
+
 /* Footer */
 .footerpage{
     height: 20vh;
@@ -896,22 +916,6 @@ header {
     .slide-content p {
         font-size: 0.9rem;
     }
-    
-    /* .slideQuoteTop {
-        height: 15vh;
-        width: 15vh;
-
-        left: -5%;
-        top: -5%;  
-    }
-    
-    .slideQuoteBottom {
-        height: 15vh;
-        width: 15vh;
-
-        right: -5%;
-        bottom: -5%; 
-    } */
 
     /* ContactUs */
     .aboutUsBackground{

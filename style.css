@@ -276,7 +276,7 @@ header {
 
 .serviceHero{
     width: 300px;
-    margin: 25px 25px
+    margin: 25px 25px;
 }
 
 .serviceHeroImg{
@@ -727,6 +727,37 @@ header {
 }
 
 /* Responsive design */
+@media(max-width: 1199px) {
+    .serviceHero{
+        width: 250px;
+        margin: 25px 10px;
+    }
+    
+    .serviceHeroImg{
+        height: 180px;
+    }
+    
+    .serviceHeroImg img {
+        object-fit: cover;
+        height: 100%; 
+        width: 100%;
+        outline: 2px solid black;
+    }
+    
+    .serviceHeroVid {
+        width: 100%; 
+        height: 180px;
+        overflow: hidden; 
+        outline: 2px solid black;
+    }
+    
+    .serviceVideo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+    }
+}
+
 @media(max-width: 1024px) {
     /* Navbar */
     .navbar .navContent{
@@ -782,7 +813,6 @@ header {
     }
 
     /* AboutUs */
-    
     .aboutUsTekst{
         width: 85%;
         /* font-size: 1rem; */
@@ -798,7 +828,7 @@ header {
     }
 }
 
-@media(max-width: 768px) {
+@media(max-width: 767px) {
     /* Navbar */
     .dropDownMenu{
         left: 2rem;
@@ -822,7 +852,7 @@ header {
 
     /* Our Services */
     .serviceHero{
-        text-align: center;
+        /* text-align: center; */
     }
 
     #slider {
@@ -890,7 +920,7 @@ header {
     }
 }
 
-@media(max-width: 480px) {
+@media(max-width: 575px) {
     /* Homecontent */
     .homeContent h1{
         font-size: 1.3rem;

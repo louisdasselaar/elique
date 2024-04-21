@@ -155,7 +155,7 @@ header {
 
 /* Experience */
 .experience {
-    height: 50vh;
+    height: 60vh;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -870,7 +870,6 @@ input:focus, textarea:focus {
     /* AboutUs */
     .aboutUsTekst{
         width: 85%;
-        /* font-size: 1rem; */
     }
 
     /* Contact Us */
@@ -892,6 +891,10 @@ input:focus, textarea:focus {
     }
 
     /* Experience */
+    .experience{
+        height: 50vh;
+    }
+
     .experienceContainer {
         width: calc(100% - 20px); /* Aangepaste padding voor kleinere schermen */
         padding: 10px;

@@ -648,6 +648,14 @@ header {
     margin-top: 5px;
 }
 
+.emailContact {
+    cursor: pointer;
+}
+
+.emailContact:hover {
+    color: #a8b0b8;
+}
+
 .contactGegevensIcon{
     margin-right: 3px;
 }

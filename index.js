@@ -1,16 +1,34 @@
-// Dropdown menu
-const toggleBtn = document.querySelector('.toggleBtn')
-const toggleBtnIcon = document.querySelector('.toggleBtn i')
-const dropDownMenu = document.querySelector('.dropDownMenu')
+// Dropdown menu toggle
+const toggleBtn = document.querySelector('.toggleBtn');
+const dropDownMenu = document.querySelector('.dropDownMenu');
+const dropDownLinks = document.querySelectorAll('.dropDownMenu a');
 
-toggleBtn.onclick = function(){
-    dropDownMenu.classList.toggle('open')
-    const isOpen = dropDownMenu.classList.contains('open')
+toggleBtn.onclick = function(event){
+    dropDownMenu.classList.toggle('open');
+    updateToggleIcon();
+    event.stopPropagation(); // Stop propagation zodat document click niet meteen het menu sluit
+};
 
-    toggleBtnIcon.classList = isOpen
-        ? 'fa-solid fa-xmark'
-        : 'fa-solid fa-bars'
+function updateToggleIcon() {
+    const isOpen = dropDownMenu.classList.contains('open');
+    toggleBtn.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
 }
+
+// Sluit het dropdown menu wanneer een link wordt geklikt
+dropDownLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        dropDownMenu.classList.remove('open');
+        updateToggleIcon();
+    });
+});
+
+// Sluit het dropdown menu als er ergens buiten het menu wordt geklikt
+document.addEventListener('click', function(event) {
+    if (!dropDownMenu.contains(event.target) && !toggleBtn.contains(event.target) && dropDownMenu.classList.contains('open')) {
+        dropDownMenu.classList.remove('open');
+        updateToggleIcon();
+    }
+});
 
 //Navbar scroll
 document.addEventListener("DOMContentLoaded", function() {
@@ -80,17 +98,26 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Contact Us
+document.addEventListener('DOMContentLoaded', function() {
+    // Toevoegen van klik event listener aan contactUsHeading
+    document.getElementById('contact').addEventListener('click', openEmailPopup);
+
+    // Toevoegen van klik event listener aan emailContact
+    document.querySelector('.emailContact').addEventListener('click', openEmailPopup);
+});
+
 function openEmailPopup() {
     if (navigator.share) {
-      navigator.share({
-        url: 'mailto:info@elique-events.com'
-      })
-      .then(() => console.log('E-mail gedeeld'))
-      .catch((error) => console.error('Fout bij delen van e-mail', error));
+        navigator.share({
+            url: 'mailto:info@elique-events.com'
+        })
+        .then(() => console.log('E-mail gedeeld'))
+        .catch((error) => console.error('Fout bij delen van e-mail', error));
     } else {
-      window.location.href = "mailto:info@elique-events.com";
+        window.location.href = "mailto:info@elique-events.com";
     }
-  }
+}
+
 
 //Email form 
 document.addEventListener("DOMContentLoaded", function() {

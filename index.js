@@ -47,55 +47,84 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //Testimonial Carousel
 document.addEventListener('DOMContentLoaded', function() {
-  const slides = document.querySelectorAll('#slider input[type="radio"]');
-  const controls = document.querySelectorAll('#controls label');
-  let slideInterval;
+    const slides = document.querySelectorAll('#slider input[type="radio"]');
+    const controls = document.querySelectorAll('#controls label');
+    let slideInterval;
+    let touchStartX = 0;
+    let touchEndX = 0;
 
-  function showSlide(index) {
-      slides.forEach((slide, idx) => {
-          slide.checked = (idx === index);
-      });
-      updateControls(index);
-  }
+    function showSlide(index) {
+        slides.forEach((slide, idx) => {
+            slide.checked = (idx === index);
+        });
+        updateControls(index);
+    }
 
-  function updateControls(index) {
-      controls.forEach((control, idx) => {
-          control.classList.toggle('active', idx === index);
-      });
-  }
+    function updateControls(index) {
+        controls.forEach((control, idx) => {
+            control.classList.toggle('active', idx === index);
+        });
+    }
 
-  function startSlideShow() {
-      clearInterval(slideInterval);
-      slideInterval = setInterval(nextSlide, 6000);
-  }
+    function startSlideShow() {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 6000);
+    }
 
-  function nextSlide() {
-      let currentSlideIndex = Array.from(slides).findIndex(slide => slide.checked);
-      let nextSlideIndex = (currentSlideIndex + 1) % slides.length;
-      showSlide(nextSlideIndex);
-  }
+    function nextSlide() {
+        let currentSlideIndex = Array.from(slides).findIndex(slide => slide.checked);
+        let nextSlideIndex = (currentSlideIndex + 1) % slides.length;
+        showSlide(nextSlideIndex);
+    }
 
-  // Start de diavoorstelling
-  startSlideShow();
+    function previousSlide() {
+        let currentSlideIndex = Array.from(slides).findIndex(slide => slide.checked);
+        let prevSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+        showSlide(prevSlideIndex);
+    }
 
-  // Pauzeer de diavoorstelling wanneer de gebruiker eroverheen hovert
-  document.getElementById('slider').addEventListener('mouseenter', function() {
-      clearInterval(slideInterval);
-  });
+    // Touch events voor swiping
+    const slider = document.getElementById('slider');
 
-  // Hervat de diavoorstelling wanneer de gebruiker de muis verlaat
-  document.getElementById('slider').addEventListener('mouseleave', function() {
-      startSlideShow();
-  });
+    slider.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+    }, false);
 
-  // Event listeners toevoegen aan de controle labels
-  controls.forEach((control, idx) => {
-      control.addEventListener('click', function() {
-          showSlide(idx);
-          startSlideShow();
-      });
-  });
+    slider.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleTouchSwipe();
+    }, false);
+
+    function handleTouchSwipe() {
+        if (touchStartX - touchEndX > 50) {
+            nextSlide();
+        } else if (touchEndX - touchStartX > 50) {
+            previousSlide();
+        }
+    }
+
+    // Start de diavoorstelling
+    startSlideShow();
+
+    // Pauzeer de diavoorstelling wanneer de gebruiker eroverheen hovert
+    document.getElementById('slider').addEventListener('mouseenter', function() {
+        clearInterval(slideInterval);
+    });
+
+    // Hervat de diavoorstelling wanneer de gebruiker de muis verlaat
+    document.getElementById('slider').addEventListener('mouseleave', function() {
+        startSlideShow();
+    });
+
+    // Event listeners toevoegen aan de controle labels
+    controls.forEach((control, idx) => {
+        control.addEventListener('click', function() {
+            showSlide(idx);
+            startSlideShow();
+        });
+    });
 });
+
 
 // Contact Us
 document.addEventListener('DOMContentLoaded', function() {

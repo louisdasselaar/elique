@@ -328,6 +328,7 @@ header {
 .serviceHeroEvent, .serviceHeroComputers{
     text-align: right;
 }
+
 /* Testimonials */
 .testimonials{
     height: 70vh;
@@ -548,7 +549,7 @@ header {
 
     position: relative;
 
-    background-image: url('assets/svg/contactUs/contactUsBackground.svg');
+    background-image: url('assets/image/pagina6/officebackground2x.png');
     background-position: center;
     background-size: cover;
 }
@@ -1040,12 +1041,6 @@ input:focus, textarea:focus {
     .aboutUsBackground{
         height: 150vh;
         width: 100%;
-    
-        position: relative;
-    
-        background-image: url('assets/svg/contactUs/contactUsBackground.svg');
-        background-position: center;
-        background-size: cover;
     }
 
     .aboutUsContainer{

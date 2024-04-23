@@ -649,8 +649,16 @@ main{
     font-weight: bold;
 }
 
+.contactUsContainer{
+    user-select: text;
+}
+
 .contactGegevens p{
     margin-top: 5px;
+}
+
+.contactGegevens a {
+    color: white; /* Hier pas je de kleur van de links aan */
 }
 
 .emailContact {
@@ -951,6 +959,10 @@ input:focus, textarea:focus {
 
     .contactUsHeadingInfoContainer{
         align-items: center;
+    }
+
+    .contactUsHeadingContainer:hover{
+        color: white;
     }
 
     .contactContainer{

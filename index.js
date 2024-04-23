@@ -127,25 +127,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // Contact Us
-document.addEventListener('DOMContentLoaded', function() {
-    // Toevoegen van klik event listener aan contactUsHeading
-    document.getElementById('contact').addEventListener('click', openEmailPopup);
+// document.addEventListener('DOMContentLoaded', function() {
+//     // Toevoegen van klik event listener aan contactUsHeading
+//     document.getElementById('contact').addEventListener('click', openEmailPopup);
 
-    // Toevoegen van klik event listener aan emailContact
-    document.querySelector('.emailContact').addEventListener('click', openEmailPopup);
-});
+//     // Toevoegen van klik event listener aan emailContact
+//     document.querySelector('.emailContact').addEventListener('click', openEmailPopup);
+// });
 
-function openEmailPopup() {
-    if (navigator.share) {
-        navigator.share({
-            url: 'mailto:info@elique-events.com'
-        })
-        .then(() => console.log('E-mail gedeeld'))
-        .catch((error) => console.error('Fout bij delen van e-mail', error));
-    } else {
-        window.location.href = "mailto:info@elique-events.com";
-    }
-}
+// function openEmailPopup() {
+//     if (navigator.share) {
+//         navigator.share({
+//             url: 'mailto:info@elique-events.com'
+//         })
+//         .then(() => console.log('E-mail gedeeld'))
+//         .catch((error) => console.error('Fout bij delen van e-mail', error));
+//     } else {
+//         window.location.href = "mailto:info@elique-events.com";
+//     }
+// }
 
 
 //Email form 

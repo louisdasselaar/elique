@@ -110,6 +110,11 @@ header {
     color: white;
 }
 
+/* Main */
+main{
+    margin: 0;
+}
+
 /* Frontpage */
 .home{
     width: 100%;

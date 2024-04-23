@@ -417,6 +417,7 @@ header {
  #overflow {
     width: 100%;
     overflow: hidden;
+    touch-action: pan-x; /* Voorkom verticaal scrollen bij aanraking */
  }
  #slide1:checked ~ #slides .inner {
     margin-left: 0;

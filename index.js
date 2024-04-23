@@ -40,14 +40,12 @@ document.addEventListener("DOMContentLoaded", function() {
         
         const targetElement = document.getElementById(targetId);
 
-        // Bereken de offset van de navbar
-        const navbarOffset = document.querySelector('.navbar').offsetHeight;
-        
+        targetElement.scrollIntoView({behavior: 'smooth', block: 'start'});
         // Scroll naar het doelelement met een aangepaste offset
-        window.scrollTo({
-          top: targetElement.offsetTop - navbarOffset,
-          behavior: 'smooth'
-        });
+        // window.scrollTo({
+        //   top: targetElement.offsetTop   
+        //   behavior: 'smooth'
+        // });
       });
     });
 });

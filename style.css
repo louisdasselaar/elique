@@ -548,7 +548,7 @@ main{
 }
 
 .aboutUsBackground{
-    height: 75vh;
+    height: 80vh;
     width: 100%;
 
     position: relative;
@@ -582,7 +582,6 @@ main{
 .aboutUsTekst p{
     font-family: "DM Sans", sans-serif;
 }
-
 
 /* Contact Us */
 .contactUsContainer{

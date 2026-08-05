@@ -435,12 +435,40 @@ p { text-wrap: pretty; }
   position: absolute;
   inset: 0;
   z-index: -1;
+  /* A still from the clip, as a background rather than the video's poster
+     attribute. iOS draws a play glyph over a <video> that has no frames yet,
+     and a real poster makes it treat the element as a user-operated player.
+     A background behind the video avoids both while still showing an image
+     from the very first paint. */
+  background-color: #0a1016;
+  background-image: image-set(url('assets/video/hero-water-poster.webp') type('image/webp'));
+  background-size: cover;
+  background-position: center;
 }
 
 .hero__video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Only hidden when JS is running to add the class back; without JS the video
+   simply shows as soon as it can. */
+.js .hero__video,
+.js .service-card__media--video video,
+.js .page-media--video video {
+  opacity: 0;
+  transition: opacity 500ms var(--ease-out);
+}
+
+.js .hero__video.is-ready,
+.js .service-card__media--video video.is-ready,
+.js .page-media--video video.is-ready { opacity: 1; }
+
+.service-card__media--video {
+  background-image: image-set(url('assets/video/services-branding-poster-sm.webp') type('image/webp'));
+  background-size: cover;
+  background-position: center;
 }
 
 .hero::after {
@@ -1262,10 +1290,20 @@ p { text-wrap: pretty; }
   outline-offset: -2px;
 }
 
-.page-media__img {
+.page-media__img,
+.page-media__video {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
+}
+
+/* Same treatment as the homepage: a still frame as the wrapper's background,
+   with the video fading in on top once it has data. */
+.page-media--video {
+  background-image: image-set(url('assets/video/services-branding-poster-sm.webp') type('image/webp'));
+  background-size: cover;
+  background-position: center;
+  background-color: #0b1a24;
 }
 
 .prose {

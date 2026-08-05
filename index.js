@@ -237,8 +237,14 @@
     });
 
     // Pause while the visitor is reading or interacting.
-    root.addEventListener('mouseenter', stop);
-    root.addEventListener('mouseleave', restart);
+    // Hover pausing only makes sense with a real pointing device. Touch
+    // browsers synthesise mouseenter on tap but frequently never fire the
+    // matching mouseleave, which left the carousel stopped for good after a
+    // single tap anywhere near it.
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      root.addEventListener('mouseenter', stop);
+      root.addEventListener('mouseleave', restart);
+    }
     root.addEventListener('focusin', stop);
     root.addEventListener('focusout', function (event) {
       if (!root.contains(event.relatedTarget)) { restart(); }
@@ -267,7 +273,9 @@
       stop();
     });
 
-    viewport.addEventListener('pointerup', function (event) {
+    // Bound to the window: a finger that lifts outside the viewport would
+    // otherwise never end the gesture, leaving autoplay switched off.
+    window.addEventListener('pointerup', function (event) {
       if (!dragging) { return; }
       dragging = false;
       var dx = event.clientX - startX;
@@ -279,7 +287,8 @@
       restart();
     });
 
-    viewport.addEventListener('pointercancel', function () {
+    window.addEventListener('pointercancel', function () {
+      if (!dragging) { return; }
       dragging = false;
       restart();
     });
@@ -293,90 +302,52 @@
   /* ===========================================================================
      Background videos
      ---------------------------------------------------------------------------
-     Nothing downloads until the video is near the viewport, the small
-     rendition is used on phones, and playback stops once it scrolls away.
+     The markup does the playing: `autoplay loop muted playsinline` with a
+     plain <source src>. That is the only combination Safari on iOS reliably
+     plays inline. Deliberately NOT used: the poster attribute, preload="none",
+     and assigning src from script — each of those makes iOS treat the element
+     as a normal video player, complete with a play button and a prompt to go
+     fullscreen.
+
+     A still frame is shown as a CSS background on the wrapper instead, and the
+     video fades in once it has data. That covers the moment where an empty
+     <video> would otherwise be drawn with a play glyph over it.
      ======================================================================== */
   function initBackgroundVideos() {
-    var videos = $$('.js-bg-video');
+    var videos = $$('.hero__video, .service-card__media--video video, .page-media--video video');
     if (!videos.length) { return; }
 
-    var small = window.matchMedia(SMALL_SCREEN);
-    var saveData = navigator.connection && navigator.connection.saveData;
-
-    function source(video) {
-      var sm = video.getAttribute('data-src-sm');
-      return (small.matches && sm) ? sm : video.getAttribute('data-src');
-    }
-
-    function load(video) {
-      if (video.dataset.loaded === 'true') { return; }
-      var src = source(video);
-      if (!src) { return; }
-      video.dataset.loaded = 'true';
-      video.src = src;
-      // Safari on iOS can reject play() when it is called in the same tick as
-      // load(), before any data has arrived. Trying again once the first frame
-      // is decoded covers that.
-      video.addEventListener('loadeddata', function () { play(video); }, { once: true });
-      video.load();
-    }
-
-    // Videos whose autoplay was refused, kept so a later gesture can start them.
-    var blocked = [];
-
-    function play(video) {
-      // iOS only honours autoplay when these are set as properties. The HTML
-      // attributes are not always enough once src is assigned from JavaScript,
-      // which is exactly what happens here.
-      video.muted = true;
-      video.playsInline = true;
-
-      var attempt = video.play();
-      if (attempt && typeof attempt.catch === 'function') {
-        attempt.catch(function () {
-          // Refused — battery saver, iOS Low Power Mode or a strict autoplay
-          // policy. The poster frame stays visible, and the first deliberate
-          // interaction gets another go.
-          if (blocked.indexOf(video) === -1) { blocked.push(video); }
-        });
-      }
-    }
-
-    // A user gesture lifts the autoplay restriction. Draining the list keeps
-    // this a no-op once everything is playing.
-    function retryBlocked() {
-      blocked.splice(0).forEach(function (video) {
-        video.muted = true;
-        var attempt = video.play();
-        if (attempt && typeof attempt.catch === 'function') { attempt.catch(function () {}); }
+    if (prefersReducedMotion.matches) {
+      // Leave the still background showing and do not start anything.
+      videos.forEach(function (video) {
+        video.removeAttribute('autoplay');
+        video.pause();
       });
-    }
-
-    ['pointerdown', 'touchend', 'keydown'].forEach(function (type) {
-      window.addEventListener(type, retryBlocked, { passive: true });
-    });
-
-    // Reduced motion or Data Saver: keep the poster frame, skip the download.
-    if (prefersReducedMotion.matches || saveData) { return; }
-
-    if (!('IntersectionObserver' in window)) {
-      videos.forEach(function (video) { load(video); play(video); });
       return;
     }
 
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        var video = entry.target;
-        if (entry.isIntersecting) {
-          load(video);
-          play(video);
-        } else if (!video.paused) {
-          video.pause();
-        }
-      });
-    }, { rootMargin: '200px 0px', threshold: 0.01 });
+    videos.forEach(function (video) {
+      var revealed = false;
 
-    videos.forEach(function (video) { observer.observe(video); });
+      function reveal() {
+        if (revealed) { return; }
+        revealed = true;
+        video.classList.add('is-ready');
+      }
+
+      // HAVE_CURRENT_DATA or better means there is already a frame to show.
+      if (video.readyState >= 2) { reveal(); return; }
+
+      // Browsers disagree about which of these fires first, and some fire
+      // none of them for a video they decide not to decode. Listen broadly.
+      ['loadeddata', 'canplay', 'playing'].forEach(function (type) {
+        video.addEventListener(type, reveal, { once: true });
+      });
+
+      // Hard backstop: never leave the video hidden. Worst case the visitor
+      // sees it appear a moment early rather than not at all.
+      window.setTimeout(reveal, 2500);
+    });
   }
 
   /* ===========================================================================

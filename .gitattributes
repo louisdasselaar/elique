@@ -1,0 +1,24 @@
+# Line endings
+# -----------------------------------------------------------------------------
+# Without this, editing on Windows and committing from a Linux tool produces
+# diffs where every line changed but nothing actually did. Text is stored as LF
+# in the repository and checked out as LF everywhere; every editor in use here
+# handles that fine.
+* text=auto eol=lf
+
+# Binary assets must never be line-ending converted
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.webp  binary
+*.avif  binary
+*.svg   text eol=lf
+*.mp4   binary
+*.ico   binary
+*.woff  binary
+*.woff2 binary
+*.zip   binary
+
+# Collapse generated/vendored noise in diffs and language stats
+*.min.css linguist-generated
+*.min.js  linguist-generated

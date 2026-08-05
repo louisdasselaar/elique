@@ -471,28 +471,95 @@ p { text-wrap: pretty; }
 }
 
 /* =============================================================================
-   6. Experience
+   5b. Continuous backdrop
+   -----------------------------------------------------------------------------
+   Four sections share one tall venue photo. A sticky layer pins the image to
+   the viewport for the length of the group, and JS pans it downwards as you
+   scroll, so you travel from the lighting rig at the top of the photo to the
+   seating at the bottom. Because it is one image on one element there are no
+   seams and nothing has to line up by hand.
    ========================================================================== */
-.experience {
+/* Registering the property lets the engine treat it as a length rather than
+   an opaque string, which keeps the pan on the compositor. */
+@property --backdrop-pan {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0px;
+}
+
+.backdrop {
   position: relative;
   isolation: isolate;
   background-color: var(--c-ink);
-  background-image: image-set(
-    url('assets/img/bg/experience-1280.webp') type('image/webp'));
-  background-image: image-set(
-    url('assets/img/bg/experience-1280.avif') type('image/avif'),
-    url('assets/img/bg/experience-1280.webp') type('image/webp'));
-  background-size: cover;
-  background-position: center;
+  /* Width-to-height ratio of the backdrop photo, used to size the pan area. */
+  --backdrop-aspect: 1;
+  --backdrop-scale: 2;
 }
 
-.experience::before {
-  content: '';
+/* Phones get the portrait rendition, which is a much taller crop. */
+@media (max-width: 700px) {
+  .backdrop { --backdrop-aspect: 0.42; }
+}
+
+.backdrop__media {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: var(--scrim-strong);
 }
+
+.backdrop__frame {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.backdrop__frame picture {
+  display: block;
+  height: 100%;
+}
+
+.backdrop__img {
+  width: 100%;
+  /* Two viewports tall, so there is a viewport's worth of travel — but never
+     shorter than the photo's own proportions demand, otherwise `cover` would
+     crop the seating off the bottom on very wide screens. */
+  height: max(
+    calc(100% * var(--backdrop-scale, 2)),
+    calc(100vw / var(--backdrop-aspect, 0.8))
+  );
+  object-fit: cover;
+  object-position: center top;
+  /* Driven by JS. Transform only, so panning stays on the compositor. */
+  transform: translate3d(0, var(--backdrop-pan, 0px), 0);
+  will-change: transform;
+}
+
+/* Scrim lives inside the frame, so it is fixed to the viewport and darkens
+   every section by the same amount — no banding at section boundaries. */
+.backdrop__frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(0, 0, 0, 0.58) 0%,
+    rgba(0, 0, 0, 0.42) 32%,
+    rgba(0, 0, 0, 0.42) 68%,
+    rgba(0, 0, 0, 0.6) 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* No pan; sit at a fixed point in the photo instead. */
+  .backdrop__img {
+    transform: translate3d(0, calc(-50% * (var(--backdrop-scale, 2) - 1) / var(--backdrop-scale, 2)), 0);
+    will-change: auto;
+  }
+}
+
+/* =============================================================================
+   6. Experience
+   ========================================================================== */
+.experience { position: relative; }
 
 .experience__grid {
   display: grid;
@@ -532,27 +599,7 @@ p { text-wrap: pretty; }
 /* =============================================================================
    7. Services
    ========================================================================== */
-.services {
-  position: relative;
-  isolation: isolate;
-  background-color: var(--c-ink);
-  background-image: image-set(
-    url('assets/img/bg/services-1280.webp') type('image/webp'));
-  background-image: image-set(
-    url('assets/img/bg/services-1280.avif') type('image/avif'),
-    url('assets/img/bg/services-1280.webp') type('image/webp'));
-  background-size: cover;
-  background-position: bottom center;
-  background-repeat: no-repeat;
-}
-
-.services::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: var(--scrim-soft);
-}
+.services { position: relative; }
 
 .services__grid {
   display: grid;
@@ -609,7 +656,17 @@ p { text-wrap: pretty; }
 /* =============================================================================
    8. Testimonials
    ========================================================================== */
-.testimonials { background-color: var(--c-ink); }
+/* Sits on the darkest part of the backdrop; a local scrim keeps the longer
+   quotes comfortably readable without introducing a visible band. */
+.testimonials { position: relative; }
+
+.testimonials::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(120% 70% at 50% 50%, rgba(0, 0, 0, 0.55), transparent 70%);
+}
 
 .carousel { margin-top: var(--space-xl); }
 
@@ -791,20 +848,14 @@ p { text-wrap: pretty; }
   place-items: center;
   min-height: clamp(140px, 22vh, 220px);
   padding-block: var(--space-lg);
-  background-color: var(--c-ink);
-  background-image: image-set(
-    url('assets/img/bg/about-heading-1280.webp') type('image/webp'));
-  background-image: image-set(
-    url('assets/img/bg/about-heading-1280.avif') type('image/avif'),
-    url('assets/img/bg/about-heading-1280.webp') type('image/webp'));
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
 }
 
 .about {
   position: relative;
   isolation: isolate;
+  /* Breathing room at the top so the venue backdrop can fade into the office
+     photo instead of cutting straight from one to the other. */
+  padding-top: clamp(2.5rem, 7vh, 6rem);
   padding-bottom: var(--section-padding);
   background-color: #14171a;
   background-image: image-set(
@@ -821,9 +872,15 @@ p { text-wrap: pretty; }
   position: absolute;
   inset: 0;
   z-index: -1;
-  /* Weighted towards the bottom so the contact form keeps enough contrast
-     against the brightest part of the office photo. */
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.62) 45%, rgba(0, 0, 0, 0.82) 100%);
+  /* Near-black at the very top so it blends out of the venue backdrop, then
+     opens up for the banner, then closes down again so the contact form keeps
+     enough contrast against the brightest part of the office photo. */
+  background: linear-gradient(180deg,
+    rgba(0, 0, 0, 0.94) 0%,
+    rgba(0, 0, 0, 0.34) 8%,
+    rgba(0, 0, 0, 0.42) 30%,
+    rgba(0, 0, 0, 0.78) 66%,
+    rgba(0, 0, 0, 0.9) 100%);
 }
 
 .about__banner {
@@ -1107,27 +1164,6 @@ p { text-wrap: pretty; }
    Larger viewports — swap in the wider background renditions
    ========================================================================== */
 @media (min-width: 1100px) {
-  .experience {
-    background-image: image-set(url('assets/img/bg/experience-2400.webp') type('image/webp'));
-    background-image: image-set(
-      url('assets/img/bg/experience-2400.avif') type('image/avif'),
-      url('assets/img/bg/experience-2400.webp') type('image/webp'));
-  }
-
-  .services {
-    background-image: image-set(url('assets/img/bg/services-2400.webp') type('image/webp'));
-    background-image: image-set(
-      url('assets/img/bg/services-2400.avif') type('image/avif'),
-      url('assets/img/bg/services-2400.webp') type('image/webp'));
-  }
-
-  .about-heading {
-    background-image: image-set(url('assets/img/bg/about-heading-2400.webp') type('image/webp'));
-    background-image: image-set(
-      url('assets/img/bg/about-heading-2400.avif') type('image/avif'),
-      url('assets/img/bg/about-heading-2400.webp') type('image/webp'));
-  }
-
   .about {
     background-image: image-set(url('assets/img/bg/about-office-2400.webp') type('image/webp'));
     background-image: image-set(

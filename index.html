@@ -119,6 +119,47 @@
       </div>
     </section>
 
+    <!-- ==================================================================
+         One continuous backdrop behind the next four sections.
+
+         The venue photo used to be cut into three files, one per section,
+         each scaled independently — so the light beams never lined up and
+         every section boundary showed a seam. It is now a single tall image
+         on a sticky layer that pans as you scroll, taking you from the
+         lighting rig at the top down to the seating at the bottom.
+         ================================================================== -->
+    <div class="backdrop" data-backdrop>
+      <div class="backdrop__media" aria-hidden="true">
+        <div class="backdrop__frame">
+          <picture>
+            <source media="(max-width: 700px)" type="image/avif"
+              srcset="assets/img/bg/backdrop-portrait-760.avif 760w,
+                      assets/img/bg/backdrop-portrait-1140.avif 1140w,
+                      assets/img/bg/backdrop-portrait-1520.avif 1520w"
+              sizes="190vw">
+            <source media="(max-width: 700px)" type="image/webp"
+              srcset="assets/img/bg/backdrop-portrait-760.webp 760w,
+                      assets/img/bg/backdrop-portrait-1140.webp 1140w,
+                      assets/img/bg/backdrop-portrait-1520.webp 1520w"
+              sizes="190vw">
+            <source type="image/avif"
+              srcset="assets/img/bg/backdrop-1400.avif 1400w,
+                      assets/img/bg/backdrop-2000.avif 2000w,
+                      assets/img/bg/backdrop-2800.avif 2800w,
+                      assets/img/bg/backdrop-3600.avif 3600w"
+              sizes="130vw">
+            <source type="image/webp"
+              srcset="assets/img/bg/backdrop-1400.webp 1400w,
+                      assets/img/bg/backdrop-2000.webp 2000w,
+                      assets/img/bg/backdrop-2800.webp 2800w,
+                      assets/img/bg/backdrop-3600.webp 3600w"
+              sizes="130vw">
+            <img class="backdrop__img" src="assets/img/bg/backdrop-2000.webp" alt=""
+              width="3620" height="3620" decoding="async">
+          </picture>
+        </div>
+      </div>
+
     <!-- ==================== Experience ==================== -->
     <section class="experience section" id="experience" aria-labelledby="experience-title">
       <div class="shell">
@@ -320,6 +361,8 @@
     <section class="about-heading section" id="about" aria-labelledby="about-title">
       <h2 class="section__title" id="about-title">About Us</h2>
     </section>
+
+    </div><!-- /.backdrop -->
 
     <section class="about" aria-labelledby="about-title">
       <div class="about__banner">

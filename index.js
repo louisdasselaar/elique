@@ -348,6 +348,76 @@
   }
 
   /* ===========================================================================
+     Continuous backdrop
+     ---------------------------------------------------------------------------
+     The photo behind the middle four sections is one tall image on a sticky
+     layer. As the group scrolls past, the image pans from its top edge to its
+     bottom edge, so the visitor travels down through the venue — lighting rig,
+     then the beams, then the seating.
+
+     Only a transform is touched, so the browser can keep this on the
+     compositor and never repaints the image itself.
+     ======================================================================== */
+  function initBackdrop() {
+    var root = $('[data-backdrop]');
+    if (!root) { return; }
+
+    var frame = $('.backdrop__frame', root);
+    var img = $('.backdrop__img', root);
+    if (!frame || !img) { return; }
+
+    // The stylesheet parks the image at a fixed position for reduced motion.
+    if (prefersReducedMotion.matches) { return; }
+
+    var start = 0;
+    var range = 1;
+    var travel = 0;
+    var ticking = false;
+
+    function measure() {
+      start = root.getBoundingClientRect().top + window.scrollY;
+      // How far the group scrolls while the sticky frame is pinned.
+      range = Math.max(1, root.offsetHeight - frame.offsetHeight);
+      // How much taller the image is than the frame — the distance to pan.
+      travel = Math.max(0, img.offsetHeight - frame.offsetHeight);
+    }
+
+    function apply() {
+      ticking = false;
+      if (!travel) { return; }
+      var progress = (window.scrollY - start) / range;
+      progress = progress < 0 ? 0 : progress > 1 ? 1 : progress;
+      img.style.setProperty('--backdrop-pan', (-progress * travel).toFixed(1) + 'px');
+    }
+
+    function onScroll() {
+      if (ticking) { return; }
+      ticking = true;
+      window.requestAnimationFrame(apply);
+    }
+
+    function refresh() {
+      measure();
+      apply();
+    }
+
+    refresh();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', refresh, { passive: true });
+    window.addEventListener('orientationchange', refresh);
+
+    // Section heights change as fonts swap in and lazy images arrive.
+    if ('ResizeObserver' in window) {
+      new ResizeObserver(refresh).observe(root);
+    } else {
+      window.addEventListener('load', refresh);
+    }
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(refresh);
+    }
+  }
+
+  /* ===========================================================================
      Contact form
      ---------------------------------------------------------------------------
      Submits over fetch so the visitor stays on the page. If fetch fails for
@@ -528,6 +598,7 @@
     initScrollSpy();
     initCarousel();
     initBackgroundVideos();
+    initBackdrop();
     initContactForm();
     initReveal();
     initBackToTop();

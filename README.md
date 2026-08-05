@@ -6,6 +6,12 @@ Marketing site for Elique Events — a dependency-free static site.
 
 ---
 
+## Deploying
+
+The site is hosted on Zonnet shared hosting and uploaded over FTP. The full
+procedure, the server layout, the 10 MB space limit and the mistakes worth
+avoiding are in **[DEPLOY.md](DEPLOY.md)**.
+
 ## Running it locally
 
 The site is plain HTML, CSS and JavaScript. There is no build step and no

@@ -77,6 +77,45 @@ Changing a token updates every place it is used.
 Type and spacing scale fluidly with `clamp()`, so text grows smoothly between
 a 320px phone and a 2560px monitor rather than jumping at fixed breakpoints.
 
+### The continuous backdrop
+
+The Experience, Services, Testimonials and About Us sections share one photo
+of a venue. It is a single tall image (`assets/img/bg/backdrop-*`) on a
+sticky layer that stays pinned to the viewport while those four sections
+scroll past, and JavaScript pans it downwards — so the visitor travels from
+the lighting rig at the top of the photo, through the beams, to the seating
+at the bottom.
+
+The image was rebuilt from the three original slices
+(`background-top/middle/bottom.png`) at their full 3620px width. The lighting
+rig and the seating are used at their native scale; only the middle is
+stretched to give the group enough height, and that stretch is graded — about
+1.1× where the trusses and beams are, rising to roughly 3.9× in the near-black
+lower portion where there is no detail to lose. Because the whole thing is now
+one image on one element, there are no seams to line up and nothing breaks
+when a section changes height.
+
+Two knobs, both on `.backdrop` in `style.css`:
+
+```css
+--backdrop-scale: 2;    /* image height as a multiple of the viewport;
+                           higher = more travel, more parallax           */
+--backdrop-aspect: 1;   /* width ÷ height of the source image — keep this
+                           in sync if you replace the photo              */
+```
+
+Phones load a separate portrait crop, swapped in by a `media` attribute on
+the `<picture>` element. If you replace it, update `--backdrop-aspect` inside
+the `max-width: 700px` block to match.
+
+The `sizes` attributes read `130vw` and `190vw` rather than `100vw`. That is
+deliberate: `object-fit: cover` scales the photo up beyond the width of its
+box, so the browser needs to pick a rendition wider than the viewport or the
+result looks soft on high-density screens.
+
+Visitors who have asked for reduced motion get the same photo held at a
+fixed position, with no panning.
+
 ### Adding a testimonial
 
 Add one `<li class="carousel__slide">` inside `.carousel__track` in

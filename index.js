@@ -314,15 +314,47 @@
       if (!src) { return; }
       video.dataset.loaded = 'true';
       video.src = src;
+      // Safari on iOS can reject play() when it is called in the same tick as
+      // load(), before any data has arrived. Trying again once the first frame
+      // is decoded covers that.
+      video.addEventListener('loadeddata', function () { play(video); }, { once: true });
       video.load();
     }
 
+    // Videos whose autoplay was refused, kept so a later gesture can start them.
+    var blocked = [];
+
     function play(video) {
+      // iOS only honours autoplay when these are set as properties. The HTML
+      // attributes are not always enough once src is assigned from JavaScript,
+      // which is exactly what happens here.
+      video.muted = true;
+      video.playsInline = true;
+
       var attempt = video.play();
-      // Autoplay can be refused (battery saver, iOS Low Power Mode). The
-      // poster stays on screen, so there is nothing to fall back to.
-      if (attempt && typeof attempt.catch === 'function') { attempt.catch(function () {}); }
+      if (attempt && typeof attempt.catch === 'function') {
+        attempt.catch(function () {
+          // Refused — battery saver, iOS Low Power Mode or a strict autoplay
+          // policy. The poster frame stays visible, and the first deliberate
+          // interaction gets another go.
+          if (blocked.indexOf(video) === -1) { blocked.push(video); }
+        });
+      }
     }
+
+    // A user gesture lifts the autoplay restriction. Draining the list keeps
+    // this a no-op once everything is playing.
+    function retryBlocked() {
+      blocked.splice(0).forEach(function (video) {
+        video.muted = true;
+        var attempt = video.play();
+        if (attempt && typeof attempt.catch === 'function') { attempt.catch(function () {}); }
+      });
+    }
+
+    ['pointerdown', 'touchend', 'keydown'].forEach(function (type) {
+      window.addEventListener(type, retryBlocked, { passive: true });
+    });
 
     // Reduced motion or Data Saver: keep the poster frame, skip the download.
     if (prefersReducedMotion.matches || saveData) { return; }

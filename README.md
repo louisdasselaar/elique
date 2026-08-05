@@ -1,6 +1,6 @@
 # Elique Events
 
-Marketing site for Elique Events — a single-page, dependency-free static site.
+Marketing site for Elique Events — a dependency-free static site.
 
 **Live:** https://elique-events.com
 
@@ -30,7 +30,8 @@ Then visit http://localhost:8000.
 ## Project layout
 
 ```
-index.html            The whole page — one document, semantic sections
+index.html            Homepage
+services/<slug>/      One page per service
 style.css             All styling; design tokens live at the top
 index.js              All behaviour; one init function per feature
 404.html              Not-found page
@@ -54,6 +55,42 @@ Browsers pick the smallest format they support; there is no JavaScript
 involved in that choice.
 
 ---
+
+## Pages
+
+The site is no longer a single page. The homepage carries the brand and the
+overview; each service has its own page so that it has something to rank on.
+
+```
+/                                         Homepage
+/services/corporate-meetings-and-events/  Meetings and conferences
+/services/incentive-experiences/          Incentive travel and rewards
+/services/branding-and-communication/     Event identity and delegate comms
+/services/production-services/            Technical production
+```
+
+Every page is standalone HTML sharing one `style.css` and one `index.js`.
+There is no build step, so the header and footer markup is repeated in each
+file — that is a deliberate trade-off at this size. If the site grows past
+roughly ten pages, move to a static site generator (Eleventy is the smallest
+sensible option) rather than keep copying the shell by hand.
+
+`index.js` is safe to load on every page: each feature checks for the markup
+it needs and exits quietly when it is absent, so the carousel, backdrop,
+video and form code simply does nothing on a service page.
+
+### Adding a service page
+
+Copy an existing one and change, in this order:
+
+1. `<title>`, `<meta name="description">` (aim for 150–158 characters — Google
+   truncates around there), `<link rel="canonical">` and the `og:` tags
+2. The `Service` and `BreadcrumbList` blocks in the JSON-LD
+3. The visible content
+4. Add the URL to `sitemap.xml`
+5. Link to it from the homepage service card **and** from the "rest of the
+   picture" block on the other service pages — internal links are how search
+   engines find and weigh a page
 
 ## Making changes
 

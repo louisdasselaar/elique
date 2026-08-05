@@ -59,8 +59,7 @@
       { "@type": "Place", "name": "Europe" }
     ],
     "sameAs": [
-      "https://www.linkedin.com/company/elique-events/",
-      "https://twitter.com/EliqueEvents"
+      "https://www.linkedin.com/company/elique-events/"
     ],
     "knowsAbout": [
       "Corporate event management", "Full-service event agency", "Conference organisation",
@@ -132,9 +131,9 @@
     <!-- ==================== Hero ==================== -->
     <section class="hero" id="home">
       <div class="hero__media" aria-hidden="true">
-        <video class="hero__video js-bg-video" playsinline muted loop preload="none" disablepictureinpicture
-          poster="assets/video/hero-water-poster.webp"
-          data-src="assets/video/hero-water.mp4" data-src-sm="assets/video/hero-water-sm.mp4"></video>
+        <video class="hero__video" autoplay loop muted playsinline>
+          <source src="assets/video/hero-water.mp4" type="video/mp4">
+        </video>
       </div>
       <div class="hero__content">
         <h1 class="hero__title">Events with a unique personality</h1>
@@ -226,7 +225,7 @@
       <div class="shell">
         <header class="section__header">
           <h2 class="section__title" id="services-title">Our Services</h2>
-          <p class="section__lead">From event concepts to interactive experiences, we've got you covered — all four disciplines under one roof, briefed once.</p>
+          <p class="section__lead">From event concepts to interactive experiences, we've got you covered — all four disciplines under one roof.</p>
         </header>
 
         <ul class="services__grid" role="list">
@@ -246,11 +245,10 @@
           </li>
 
           <li class="service-card">
-            <div class="service-card__media">
-              <video class="js-bg-video" playsinline muted loop preload="none" disablepictureinpicture
-                poster="assets/video/services-branding-poster-sm.webp"
-                data-src="assets/video/services-branding.mp4" data-src-sm="assets/video/services-branding-sm.mp4"
-                aria-label="Showreel of branded event graphics and signage."></video>
+            <div class="service-card__media service-card__media--video">
+              <video autoplay loop muted playsinline aria-label="Showreel of branded event graphics and signage.">
+                <source src="assets/video/services-branding-sm.mp4" type="video/mp4">
+              </video>
             </div>
             <h3 class="service-card__title"><a class="service-card__link" href="services/branding-and-communication/">Branding &amp; Communication</a></h3>
             <p class="service-card__text">Help shape your event's vibe and message with style!</p>
@@ -335,7 +333,7 @@
                     creativity of the Elique team, we have been able to do just that and delight attendees with truly
                     memorable and impactful experiences. I am looking forward to working with them again in the future.
                   </p>
-                  <footer class="quote__source">Global Franchise Head — Executive Leadership</footer>
+                  <footer class="quote__source">Global Franchise Head -Executive leadership</footer>
                 </blockquote>
               </li>
               <li class="carousel__slide">
@@ -391,8 +389,8 @@
       <div class="about__banner">
         <div class="shell shell--narrow">
           <p>With over 25 years of event industry experience, we're passionate about creating immersive experiences,
-            innovating concepts, orchestrating productions, and developing the event design — bringing events to life
-            with a unique personality!</p>
+            innovating concepts, orchestrating productions, and develop the event design bringing events to life with a
+            unique personality!</p>
           <p>Our clientele includes HealthCare, LifeScience, Real Estate, Sports, Entertainment and Insurance sectors.
           </p>
         </div>

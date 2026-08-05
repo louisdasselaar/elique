@@ -3,272 +3,423 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elique-Events</title>
-  <link rel="icon" type="image/x-icon" href="assets/image/logo/faviconBlackSquare.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <title>Elique Events — Corporate events with a unique personality</title>
+  <meta name="description"
+    content="Elique Events designs and produces corporate meetings, incentive experiences and brand communication. Over 25 years of event industry experience across healthcare, life science, real estate, sports and insurance.">
+  <link rel="canonical" href="https://elique-events.com/">
+  <meta name="theme-color" content="#1e1b1b">
+  <meta name="format-detection" content="telephone=yes">
+
+  <!-- Icons -->
+  <link rel="icon" href="assets/img/logo/icon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/img/logo/icon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/logo/icon-180.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Elique Events">
+  <meta property="og:title" content="Elique Events — Corporate events with a unique personality">
+  <meta property="og:description"
+    content="We design and produce corporate meetings, incentive experiences and brand communication. Let's create unforgettable moments.">
+  <meta property="og:url" content="https://elique-events.com/">
+  <meta property="og:image" content="https://elique-events.com/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="A packed venue during an Elique Events production, lit in blue with confetti in the air.">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts: preconnect first so the handshake overlaps with CSS parsing -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&family=Montserrat:wght@400;500;700&display=swap">
+
   <link rel="stylesheet" href="style.css">
+  <script src="index.js" defer></script>
 
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Elique-Events",
-      "url": "https://elique-events.com",
-      "logo": "https://elique-events.com/assets/image/logo/faviconBlack.png",
-      "image": "https://elique-events.com/assets/image/logo/faviconBlack.png",
-      "telephone": "+31 (0)6 10 08 17 26",
-      "email": "info@elique-events.com"
-    }
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": "https://elique-events.com/#organisation",
+    "name": "Elique Events",
+    "alternateName": "Elique-Events",
+    "description": "Event agency designing and producing corporate meetings, incentive experiences, brand communication and production services.",
+    "url": "https://elique-events.com/",
+    "logo": "https://elique-events.com/assets/img/logo/icon-512.png",
+    "image": "https://elique-events.com/assets/img/og-image.jpg",
+    "telephone": "+31610081726",
+    "email": "info@elique-events.com",
+    "areaServed": "Worldwide",
+    "address": { "@type": "PostalAddress", "addressCountry": "NL" },
+    "knowsAbout": ["Corporate meetings", "Incentive travel", "Event production", "Brand communication"]
+  }
   </script>
-
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous" />
-  <link href="https://fonts.cdnfonts.com/css/bodoniflf" rel="stylesheet">
-  <!-- Fonts -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    @import url('https://fonts.cdnfonts.com/css/bodoniflf');
-    @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Montserrat&family=Roboto:wght@400&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:wght@500&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
-  </style>
 </head>
 
 <body>
-  <!-- Header -->
-  <div id="home" class="home">
-    <header class="header">
-      <div class="navbar">
-        <div class="logo"><a href="#home"><img src="assets/image/logo/logowit.png" alt="logo"
-              class="logoimg"></a></div>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-        <ul class="navContent">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#service">Services</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#aboutUs">About Us</a></li>
-          <li><a href="#contact">Contact</a></li>
+  <!-- ==================== Header ==================== -->
+  <header class="site-header" id="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="#home" aria-label="Elique Events — back to top">
+        <picture>
+          <source srcset="assets/img/logo/logo-white.webp" type="image/webp">
+          <img src="assets/img/logo/logo-white.png" width="181" height="106" alt="Elique Events">
+        </picture>
+      </a>
+
+      <nav class="nav" aria-label="Main">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#home">Home</a></li>
+          <li><a class="nav__link" href="#services">Services</a></li>
+          <li><a class="nav__link" href="#testimonials">Testimonials</a></li>
+          <li><a class="nav__link" href="#about">About Us</a></li>
+          <li><a class="nav__link" href="#contact">Contact</a></li>
         </ul>
+      </nav>
 
-        <div class="toggleBtn">
-          <i class="fa-solid fa-bars"></i>
-        </div>
-      </div>
-
-      <div class="dropDownMenu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#service">Services</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#aboutUs">About Us</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </div>
-    </header>
-
-    <video autoplay loop muted playsinline class="homeVideo">
-      <source src="assets/mp4/frontpage/water720p.mp4" type="video/mp4">
-    </video>
-
-    <div class="homeContent">
-      <h1>Events with a unique personality</h1>
-      <h2>Let's create unforgettable moments!</h2>
-    </div>
-  </div>
-
-  <main>
-    <!-- Experience -->
-    <div id="experience" class="experience">
-      <div class="experienceHeading">
-        <h2>Flawless execution is part of our DNA</h2>
-      </div>
-      <div class="experienceContainer">
-        <div class="experience-stage"></div>
-        <div class="experience-party"></div>
-        <div class="experience-screen"></div>
-      </div>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-drawer"
+        aria-label="Open menu">
+        <span class="nav-toggle__box" aria-hidden="true">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </span>
+      </button>
     </div>
 
-    <!-- Our services -->
-    <div id="service" class="service">
-      <div class="serviceHeading">
-        <h2>OUR SERVICES</h2>
-        <h3>From event concepts to interactive experiences, we've got you covered!</h3>
+    <nav class="nav-drawer" id="nav-drawer" aria-label="Mobile" hidden>
+      <ul class="nav-drawer__list">
+        <li><a class="nav__link" href="#home">Home</a></li>
+        <li><a class="nav__link" href="#services">Services</a></li>
+        <li><a class="nav__link" href="#testimonials">Testimonials</a></li>
+        <li><a class="nav__link" href="#about">About Us</a></li>
+        <li><a class="nav__link" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ==================== Hero ==================== -->
+    <section class="hero" id="home">
+      <div class="hero__media" aria-hidden="true">
+        <video class="hero__video js-bg-video" playsinline muted loop preload="none" disablepictureinpicture
+          poster="assets/video/hero-water-poster.webp"
+          data-src="assets/video/hero-water.mp4" data-src-sm="assets/video/hero-water-sm.mp4"></video>
       </div>
-
-      <div class="serviceContainer">
-        <div class="serviceHero serviceHeroScreens">
-          <div class="serviceHeroImg"><img src="assets/image/pagina3/screens.png" alt="Event Management"></div>
-          <div class="serviceHeroHeading">
-            <h4>Corporate Meetings & Events</h4>
-          </div>
-          <div class="serviceHeroText"><p>Engage your attendees with memorable and impactful events.</p></div>
-        </div>
-        <div class="serviceHero serviceHeroVideo">
-          <div class="serviceHeroVid">
-            <video autoplay loop muted playsinline class="serviceVideo">
-              <source src="assets/mp4/pagina3/branding720p.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="serviceHeroHeading">
-            <h4>Branding & Communication</h4>
-          </div>
-          <div class="serviceHeroText"><p>Help shape your event's vibe and message with style!</p></div>
-        </div>
-        <div class="serviceHero serviceHeroEvent">
-          <div class="serviceHeroImg"><img src="assets/image/pagina3/event.png" alt="Event Manager"></div>
-          <div class="serviceHeroHeading">
-            <h4>Incentive Experiences</h4>
-          </div>
-          <div class="serviceHeroText"><p>Get ready for some serious fun and fabulous moments!</p></div>
-        </div>
-        <div class="serviceHero serviceHeroComputers">
-          <div class="serviceHeroImg"><img src="assets/image/pagina3/computers.png" alt="Event"></div>
-          <div class="serviceHeroHeading">
-            <h4>Production Services</h4>
-          </div>
-          <div class="serviceHeroText"><p>Camera, Set, Go! <br> Count on a seamless coordination and execution.</p></div>
-        </div>
+      <div class="hero__content">
+        <h1 class="hero__title">Events with a unique personality</h1>
+        <p class="hero__tagline">Let's create unforgettable moments!</p>
       </div>
-    </div>
+    </section>
 
-    <!-- Testimonials -->
-    <div id="testimonials" class="testimonials">
-      <div class="divider"><hr></div>
+    <!-- ==================== Experience ==================== -->
+    <section class="experience section" id="experience" aria-labelledby="experience-title">
+      <div class="shell">
+        <h2 class="section__title section__title--plain" id="experience-title">Flawless execution is part of our DNA</h2>
 
-      <div class="testimonialsHeading"><h2>TESTIMONIALS</h2></div>
-    
-      <div id="slider">
-        <input type="radio" name="slider" id="slide1" checked>
-        <input type="radio" name="slider" id="slide2">
-        <input type="radio" name="slider" id="slide3">
-        <input type="radio" name="slider" id="slide4">
-        <input type="radio" name="slider" id="slide5">
-        <div id="slides">
-          <div class="slideQuoteTop"></div>
-          <div class="slideQuoteBottom"></div>
-         <div id="overflow">
-            <div class="inner">
-               <div class="slide slide_1">
-                  <div class="slide-content">
-                     <h4>What I appreciate most is the attention to detail, focus on attendee experience, and availability of the team.  They take the time to understand the intended audience to bring creativity to each event, customizing it for the audience.  They go above and beyond to ensure a positive experience for everyone!</h4>
-                      <p>Global Head Market Development</p>
-                  </div>
-               </div>
-               <div class="slide slide_2">
-                  <div class="slide-content">
-                    <h4>Very strong strategic partner, very proactive and very well organised. We have multiplied by 5 the number of attendees since 2019 and they have been instrumental. Would recommend 100%.</h4>
-                    <p>Commercial Lead</p>
-                  </div>
-               </div>
-               <div class="slide slide_3">
-                  <div class="slide-content slide-content-long">
-                    <h4>I have worked with both Angelique and Emma multiple times and can highly recommend them. They are both extremely professional. Planning even the most complicated event is perfectly orchestrated with a lot of attention to detail. I like to raise the bar for my events every year and surprise the audience with new and different ways to approach engagement and content delivery. Thanks to the creativity of the Elique team, we have been able to do just that and delight attendees with truly memorable and impactful experiences. I am looking forward to working with them again in the future.</h4>
-                    <p>Global Franchise Head -Executive leadership</p>
-                  </div>
-               </div>
-               <div class="slide slide_4">
-                  <div class="slide-content">
-                    <h4>Full of energy, knowledge and passion for events. Extremely reliable professional, will not rest until things get done. Incredible and a valuable asset for any team</h4>
-                    <p>Head of Operations</p>
-                  </div>
-               </div>
-               <div class="slide slide_5">
-                <div class="slide-content">
-                  <h4>They were phenomenal! From coordination end-to-end logistics to creating the best experience for attendees, they handled everything seamlessly. Their attention to details and professionalism made the event a huge success. I highly recommend them for any event!</h4>
-                  <p>Transformation Lead</p>
-                </div>
-             </div>
+        <ul class="experience__grid" role="list">
+          <li class="experience__tile">
+            <picture>
+              <source type="image/avif" srcset="assets/img/experience/stage-500.avif">
+              <source type="image/webp" srcset="assets/img/experience/stage-500.webp">
+              <img src="assets/img/experience/stage-500.webp" width="532" height="274" loading="lazy" decoding="async"
+                alt="A televised stage set with LED walls and a live audience.">
+            </picture>
+          </li>
+          <li class="experience__tile">
+            <picture>
+              <source type="image/avif" srcset="assets/img/experience/party-500.avif 500w, assets/img/experience/party-800.avif 800w"
+                sizes="(max-width: 700px) 33vw, 340px">
+              <source type="image/webp" srcset="assets/img/experience/party-500.webp 500w, assets/img/experience/party-800.webp 800w"
+                sizes="(max-width: 700px) 33vw, 340px">
+              <img src="assets/img/experience/party-500.webp" width="918" height="610" loading="lazy" decoding="async"
+                alt="Guests celebrating under a mirror ball as confetti falls.">
+            </picture>
+          </li>
+          <li class="experience__tile">
+            <picture>
+              <source type="image/avif" srcset="assets/img/experience/screens-500.avif 500w, assets/img/experience/screens-800.avif 800w"
+                sizes="(max-width: 700px) 33vw, 340px">
+              <source type="image/webp" srcset="assets/img/experience/screens-500.webp 500w, assets/img/experience/screens-800.webp 800w"
+                sizes="(max-width: 700px) 33vw, 340px">
+              <img src="assets/img/experience/screens-500.webp" width="1207" height="542" loading="lazy" decoding="async"
+                alt="A wide conference stage flanked by large presentation screens.">
+            </picture>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== Services ==================== -->
+    <section class="services section" id="services" aria-labelledby="services-title">
+      <div class="shell">
+        <header class="section__header">
+          <h2 class="section__title" id="services-title">Our Services</h2>
+          <p class="section__lead">From event concepts to interactive experiences, we've got you covered!</p>
+        </header>
+
+        <ul class="services__grid" role="list">
+          <li class="service-card">
+            <div class="service-card__media">
+              <picture>
+                <source type="image/avif" srcset="assets/img/services/meetings-400.avif 400w, assets/img/services/meetings-700.avif 700w"
+                  sizes="(max-width: 620px) 100vw, 300px">
+                <source type="image/webp" srcset="assets/img/services/meetings-400.webp 400w, assets/img/services/meetings-700.webp 700w"
+                  sizes="(max-width: 620px) 100vw, 300px">
+                <img src="assets/img/services/meetings-400.webp" width="850" height="613" loading="lazy" decoding="async"
+                  alt="Delegates seated in front of a curved LED screen during a corporate plenary session.">
+              </picture>
             </div>
-         </div>
-        </div>
-        <div id="controls">
-          <label for="slide1"></label>
-          <label for="slide2"></label>
-          <label for="slide3"></label>
-          <label for="slide4"></label>
-          <label for="slide5"></label>
-        </div>
-        <div id="bullets">
-          <label for="slide1"></label>
-          <label for="slide2"></label>
-          <label for="slide3"></label>
-          <label for="slide4"></label>
-          <label for="slide5"></label>
+            <h3 class="service-card__title">Corporate Meetings &amp; Events</h3>
+            <p class="service-card__text">Engage your attendees with memorable and impactful events.</p>
+          </li>
+
+          <li class="service-card">
+            <div class="service-card__media">
+              <video class="js-bg-video" playsinline muted loop preload="none" disablepictureinpicture
+                poster="assets/video/services-branding-poster-sm.webp"
+                data-src="assets/video/services-branding.mp4" data-src-sm="assets/video/services-branding-sm.mp4"
+                aria-label="Showreel of branded event graphics and signage."></video>
+            </div>
+            <h3 class="service-card__title">Branding &amp; Communication</h3>
+            <p class="service-card__text">Help shape your event's vibe and message with style!</p>
+          </li>
+
+          <li class="service-card">
+            <div class="service-card__media">
+              <picture>
+                <source type="image/avif" srcset="assets/img/services/incentive-400.avif 400w, assets/img/services/incentive-700.avif 700w"
+                  sizes="(max-width: 620px) 100vw, 300px">
+                <source type="image/webp" srcset="assets/img/services/incentive-400.webp 400w, assets/img/services/incentive-700.webp 700w"
+                  sizes="(max-width: 620px) 100vw, 300px">
+                <img src="assets/img/services/incentive-400.webp" width="805" height="608" loading="lazy" decoding="async"
+                  alt="Guests dancing at an evening reception in a light-filled venue.">
+              </picture>
+            </div>
+            <h3 class="service-card__title">Incentive Experiences</h3>
+            <p class="service-card__text">Get ready for some serious fun and fabulous moments!</p>
+          </li>
+
+          <li class="service-card">
+            <div class="service-card__media">
+              <picture>
+                <source type="image/avif" srcset="assets/img/services/production-400.avif 400w, assets/img/services/production-700.avif 700w"
+                  sizes="(max-width: 620px) 100vw, 300px">
+                <source type="image/webp" srcset="assets/img/services/production-400.webp 400w, assets/img/services/production-700.webp 700w"
+                  sizes="(max-width: 620px) 100vw, 300px">
+                <img src="assets/img/services/production-400.webp" width="1206" height="576" loading="lazy" decoding="async"
+                  alt="A production gallery with monitors and control desks during a live broadcast.">
+              </picture>
+            </div>
+            <h3 class="service-card__title">Production Services</h3>
+            <p class="service-card__text">Camera, Set, Go!<br>Count on a seamless coordination and execution.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== Testimonials ==================== -->
+    <section class="testimonials section" id="testimonials" aria-labelledby="testimonials-title">
+      <div class="shell shell--narrow">
+        <hr class="rule">
+        <h2 class="section__title" id="testimonials-title">Testimonials</h2>
+
+        <div class="carousel" id="carousel" data-autoplay="6000">
+          <div class="carousel__row">
+          <span class="carousel__quote carousel__quote--open" aria-hidden="true"></span>
+          <span class="carousel__quote carousel__quote--close" aria-hidden="true"></span>
+
+          <button class="carousel__arrow carousel__arrow--prev" type="button" data-carousel-prev
+            aria-label="Previous testimonial">
+            <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
+              <path d="M15 4 7 12l8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+
+          <div class="carousel__viewport" data-carousel-viewport aria-live="polite" aria-atomic="true">
+            <ul class="carousel__track" data-carousel-track role="list">
+              <li class="carousel__slide">
+                <blockquote class="quote">
+                  <p>What I appreciate most is the attention to detail, focus on attendee experience, and availability
+                    of the team. They take the time to understand the intended audience to bring creativity to each
+                    event, customizing it for the audience. They go above and beyond to ensure a positive experience for
+                    everyone!</p>
+                  <footer class="quote__source">Global Head Market Development</footer>
+                </blockquote>
+              </li>
+              <li class="carousel__slide">
+                <blockquote class="quote">
+                  <p>Very strong strategic partner, very proactive and very well organised. We have multiplied by 5 the
+                    number of attendees since 2019 and they have been instrumental. Would recommend 100%.</p>
+                  <footer class="quote__source">Commercial Lead</footer>
+                </blockquote>
+              </li>
+              <li class="carousel__slide">
+                <blockquote class="quote">
+                  <p>I have worked with both Angelique and Emma multiple times and can highly recommend them. They are
+                    both extremely professional. Planning even the most complicated event is perfectly orchestrated with
+                    a lot of attention to detail. I like to raise the bar for my events every year and surprise the
+                    audience with new and different ways to approach engagement and content delivery. Thanks to the
+                    creativity of the Elique team, we have been able to do just that and delight attendees with truly
+                    memorable and impactful experiences. I am looking forward to working with them again in the future.
+                  </p>
+                  <footer class="quote__source">Global Franchise Head — Executive Leadership</footer>
+                </blockquote>
+              </li>
+              <li class="carousel__slide">
+                <blockquote class="quote">
+                  <p>Full of energy, knowledge and passion for events. Extremely reliable professional, will not rest
+                    until things get done. Incredible and a valuable asset for any team.</p>
+                  <footer class="quote__source">Head of Operations</footer>
+                </blockquote>
+              </li>
+              <li class="carousel__slide">
+                <blockquote class="quote">
+                  <p>They were phenomenal! From coordination end-to-end logistics to creating the best experience for
+                    attendees, they handled everything seamlessly. Their attention to details and professionalism made
+                    the event a huge success. I highly recommend them for any event!</p>
+                  <footer class="quote__source">Transformation Lead</footer>
+                </blockquote>
+              </li>
+            </ul>
+          </div>
+
+          <button class="carousel__arrow carousel__arrow--next" type="button" data-carousel-next
+            aria-label="Next testimonial">
+            <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
+              <path d="m9 4 8 8-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+          </div>
+
+          <div class="carousel__controls">
+            <div class="carousel__dots" data-carousel-dots role="tablist" aria-label="Choose a testimonial"></div>
+            <button class="carousel__playpause" type="button" data-carousel-toggle aria-label="Pause testimonials">
+              <svg class="icon-pause" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false">
+                <path d="M8 5v14M16 5v14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+              </svg>
+              <svg class="icon-play" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false">
+                <path d="M7 4.5v15l13-7.5z" fill="currentColor" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-    
-    <!-- About us -->
-    <div id="aboutUs" class="aboutUsHeading">
-      <h2>ABOUT US</h2>
-    </div>
+    </section>
 
-    <div class="aboutUsBackground">
-      <div class="aboutUsContainer">
-        <div class="aboutUsTekst">
-          <p>
-            With over 25 years of event industry experience,
-            we're passionate about creating immersive experiences,
-            innovating concepts, orchestrating productions, and develop the event design bringing events to life with a
-            unique personality!
+    <!-- ==================== About ==================== -->
+    <section class="about-heading section" id="about" aria-labelledby="about-title">
+      <h2 class="section__title" id="about-title">About Us</h2>
+    </section>
+
+    <section class="about" aria-labelledby="about-title">
+      <div class="about__banner">
+        <div class="shell shell--narrow">
+          <p>With over 25 years of event industry experience, we're passionate about creating immersive experiences,
+            innovating concepts, orchestrating productions, and developing the event design — bringing events to life
+            with a unique personality!</p>
+          <p>Our clientele includes HealthCare, LifeScience, Real Estate, Sports, Entertainment and Insurance sectors.
           </p>
-          <p>
-            Our clientele includes HealthCare, 
-            LifeScience, Real Estate, Sports, 
-            Entertainment and Insurance sectors.
-          </p>
         </div>
       </div>
-      <div class="contactUsContainer">
-        <div class="contactContainer">
-          <div class="contactUsHeadingInfoContainer">
-            <div id="contact" class="contactUsHeading" onclick="openEmailPopup()">
-              <div class="contactUsHeadingContainer">
-                <h3>Let's work together</h3>
-                <h2>CONTACT US!</h2>
-              </div>
-            </div>
-            <div class="contactGegevens">
-              <p><i class="fa-solid fa-phone contactGegevensIcon"></i><a href="tel:+31610081726">+31 (0)6 10 08 17 26</a></p>
-              <p class="emailContact"><i class="fa-solid fa-envelope contactGegevensIcon"></i><a href="mailto:info@elique-events.com">info@elique-events.com</a></p>
-            </div>
-          </div>
-        </div>
 
-        <div class="formContainer">
-          <form action="https://api.web3forms.com/submit" method="POST" class="formInput">
-              <input type="hidden" name="access_key" value="f2dd2360-7136-4993-b7d8-e598cd0a1cd2">
+      <!-- ==================== Contact ==================== -->
+      <div class="shell">
+        <div class="contact" id="contact">
+          <div class="contact__intro">
+            <p class="contact__eyebrow">Let's work together</p>
+            <h2 class="contact__title">Contact us!</h2>
 
-              <input type="text" name="name" placeholder="Name" class="contactInput" required>
-              <input type="email" name="email" placeholder="Email" class="contactInput" required>
-              <textarea name="message" placeholder="Message" class="contactInputMsg" required></textarea>
-              <button type="submit" class="submitButton">Send</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <div class="footerpage">
-      <div class="container">
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top text-white">
-            <div class="col-md-4 d-flex align-items-center">
-                <a href="/" class="mb-3 me-2 mb-md-0 text-decoration-none lh-1 text-white">
-                    <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap" class="text-white"></use></svg>
+            <ul class="contact__details" role="list">
+              <li>
+                <a href="tel:+31610081726">
+                  <svg class="contact__icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+                    <path fill="currentColor"
+                      d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1z" />
+                  </svg>
+                  <span>+31 (0)6 10 08 17 26</span>
                 </a>
-                <span class="mb-3 mb-md-0">© 2024 Elique-Events</span>
-            </div>
-        </footer>
+              </li>
+              <li>
+                <a href="mailto:info@elique-events.com">
+                  <svg class="contact__icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+                    <path fill="currentColor"
+                      d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2m0 4-8 5-8-5V6l8 5 8-5z" />
+                  </svg>
+                  <span>info@elique-events.com</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="contact__form-wrap">
+            <form class="form" id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+              <input type="hidden" name="access_key" value="f2dd2360-7136-4993-b7d8-e598cd0a1cd2">
+              <input type="hidden" name="subject" value="New enquiry via elique-events.com">
+              <input type="hidden" name="from_name" value="Elique Events website">
+              <!-- Honeypot: hidden from people, filled in by bots -->
+              <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+              <div class="field">
+                <label class="visually-hidden" for="f-name">Your name</label>
+                <input class="field__input" id="f-name" type="text" name="name" placeholder="Name" required
+                  autocomplete="name" maxlength="80">
+                <p class="field__error" id="f-name-error" data-error-for="f-name" hidden>Please tell us your name.</p>
+              </div>
+
+              <div class="field">
+                <label class="visually-hidden" for="f-email">Your email address</label>
+                <input class="field__input" id="f-email" type="email" name="email" placeholder="Email" required
+                  autocomplete="email" maxlength="120">
+                <p class="field__error" id="f-email-error" data-error-for="f-email" hidden>Please enter a valid email address.</p>
+              </div>
+
+              <div class="field">
+                <label class="visually-hidden" for="f-message">Your message</label>
+                <textarea class="field__input field__input--area" id="f-message" name="message" placeholder="Message"
+                  required rows="4" maxlength="2000"></textarea>
+                <p class="field__error" id="f-message-error" data-error-for="f-message" hidden>Please add a short message.</p>
+              </div>
+
+              <button class="btn" type="submit" data-submit>
+                <span data-submit-label>Send</span>
+                <span class="btn__spinner" aria-hidden="true"></span>
+              </button>
+
+              <p class="form__status" data-form-status role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   </main>
-  
-  <!-- Scripts -->
-  <script src="index.js" charset="UTF-8"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- ==================== Footer ==================== -->
+  <footer class="site-footer">
+    <div class="shell site-footer__inner">
+      <p class="site-footer__copy">&copy; <span data-year>2024</span> Elique Events</p>
+      <ul class="site-footer__links" role="list">
+        <li><a href="mailto:info@elique-events.com">info@elique-events.com</a></li>
+        <li><a href="tel:+31610081726">+31 (0)6 10 08 17 26</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button class="to-top" id="to-top" type="button" aria-label="Back to top" hidden>
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+      <path d="M12 19V5m-7 7 7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" />
+    </svg>
+  </button>
 </body>
+
 </html>

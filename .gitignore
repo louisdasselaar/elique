@@ -1,1 +1,28 @@
+# --- OS -----------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
 
+# --- Editors ------------------------------------------------------------
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*~
+
+# --- Tooling ------------------------------------------------------------
+node_modules/
+.cache/
+dist/
+*.log
+npm-debug.log*
+
+# --- Local / secrets ----------------------------------------------------
+.env
+.env.*
+!.env.example
+
+# --- Working files ------------------------------------------------------
+_to_delete/
+assets/**/*.psd
+assets/**/*.ai
